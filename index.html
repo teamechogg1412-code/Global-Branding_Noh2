@@ -1,1620 +1,800 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>노상현 배우 글로벌 브랜딩 실행 전략</title>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STEVE NOH | 2026 Global Branding & Viral Master Strategy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap');
-
-    :root{
-      --ink:#0b0b0c;
-      --paper:#ffffff;
-      --bg:#f6f7f9;
-      --line:#e7e7ea;
-      --muted:#6b7280;
-      --gold:#b08d57;
-      --soft:#f1f3f6;
+    :root { --accent: #6D5DF6; --gold: #b08d57; --bg: #F3F4F7; --text: #111827; --line: rgba(17, 24, 39, 0.1); }
+    body { font-family: 'Inter', 'Noto Sans KR', sans-serif; background-color: var(--bg); color: var(--text); overflow-x: hidden; }
+    
+    /* 패널 사이즈 대폭 확장 */
+    .slide-container { 
+      max-width: 1900px; /* 1440px -> 1680px 확장 */
+      margin: 0 auto; 
+      display: grid; 
+      grid-template-columns: 360px 1fr; /* 320px -> 360px 확장 */
+      gap: 40px; 
+      padding: 120px 40px 40px; 
     }
 
-    body{ font-family:'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:var(--bg); color:var(--ink); }
-    .wrap{ max-width: 980px; margin:0 auto; }
+    .nav-panel { position: sticky; top: 120px; height: calc(100vh - 180px); overflow-y: auto; padding-right: 15px; }
+    .nav-panel::-webkit-scrollbar { width: 4px; }
+    .nav-panel::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
 
-    /* unified card */
-    .card{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:28px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-    }
-    .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      border-bottom:1px solid var(--line);
-      padding-bottom:12px; margin-bottom:18px;
-    }
-    .kicker{ letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-size:12px; font-weight:600; }
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius:999px;
-      background:rgba(176,141,87,0.10);
-      border:1px solid rgba(176,141,87,0.25);
-      color:var(--gold);
-      font-weight:700; font-size:12px;
-    }
-    .accent-left{
-      border-left: 4px solid var(--gold);
-      padding-left: 14px;
+    .stage { 
+      background: white; 
+      border-radius: 48px; 
+      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.08); 
+      min-height: 920px; /* 850px -> 920px 상향 */
+      display: flex; 
+      flex-direction: column; 
+      overflow: hidden; 
+      border: 1px solid var(--line); 
     }
 
-    /* image slots */
-    .media{
-      border:1px solid var(--line);
-      border-radius:16px;
-      overflow:hidden;
-      background: #fafafa;
-    }
-    .media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    .media-placeholder{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height: 260px;
-      background: linear-gradient(135deg, #f4f5f7, #ffffff);
-      color: var(--muted);
-      font-weight:700;
-      gap:10px;
-    }
-    .caption{
-      padding:10px 14px;
-      font-size:12px;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-      background:#fff;
-    }
-
-    /* compact table */
-    table{ width:100%; border-collapse:collapse; }
-    th{ background:var(--soft); text-align:left; padding:12px; border-bottom:1px solid var(--line); font-weight:800; font-size:13px; }
-    td{ padding:12px; border-bottom:1px solid #f0f1f4; vertical-align:top; font-size:14px; color:#111; }
-    .muted{ color:var(--muted); }
-    .pill{
-      display:inline-flex; align-items:center;
-      padding:6px 10px; border-radius:999px;
-      background: #111;
-      color:#fff; font-size:12px; font-weight:700;
-    }
-
-    /* unified “dark panel” (only when needed) */
-    .dark-card{
-      background: var(--ink);
-      color:#fff;
-      border:1px solid rgba(255,255,255,0.10);
-    }
-    .dark-card .muted{ color: rgba(255,255,255,0.60); }
-    .dark-card .section-title{ border-bottom:1px solid rgba(255,255,255,0.12); }
-    .dark-card .media{ border-color: rgba(255,255,255,0.14); background: rgba(255,255,255,0.04); }
-    .dark-card .caption{ background: rgba(255,255,255,0.03); border-top-color: rgba(255,255,255,0.10); color: rgba(255,255,255,0.65); }
-
-    /* small helper */
-    .grid-gap{ gap:18px; }
+    .img-slot { background: #f8fafc; border-radius: 32px; overflow: hidden; border: 1px dashed #e2e8f0; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: #94a3b8; font-size: 13px; font-weight: 600; }
+    .img-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    
+    .accent-card { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); color: white; border-radius: 36px; padding: 45px; }
+    
+    .nav-item { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .nav-item.active { background: var(--accent); color: white !important; font-weight: 700; transform: translateX(10px); box-shadow: 0 10px 20px rgba(109, 93, 246, 0.2); }
+    
+    .bullet-item { display: flex; gap: 12px; margin-bottom: 12px; line-height: 1.6; }
+    .bullet-item::before { content: "•"; color: var(--accent); font-weight: bold; font-size: 1.2em; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-in { animation: fadeIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    
+    table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
+    th { background: #f8fafc; padding: 16px; text-align: left; border-bottom: 2px solid #111827; font-weight: 800; }
+    td { padding: 18px 16px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+    
+    /* 탑바 사이즈 조정 */
+    .top-nav { height: 90px; }
   </style>
 </head>
-
-<body class="p-4 md:p-12">
-  <div class="wrap space-y-6">
-
-    <!-- Header -->
-    <header class="card">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-        <div>
-          <p class="kicker">Global Branding & Viral Marketing Strategy 2026</p>
-          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2">
-            노상현 배우 글로벌 브랜딩 및 마케팅 실행 전략
-          </h1>
-          <p class="text-sm text-gray-500 mt-3">
-            *문서/슬라이드 톤을 하나로 통일한 실행형 아웃라인 (이미지 슬롯 포함)
-          </p>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="badge"><i class="fa-solid fa-shield"></i> CONFIDENTIAL</span>
-          <span class="badge"><i class="fa-solid fa-bolt"></i> EXECUTION</span>
-        </div>
-      </div>
-    </header>
-
-    <!-- 1. Roadmap + image slot -->
-    <section class="card">
-      <div class="section-title">
-        <h2 class="text-xl md:text-2xl font-extrabold">1. 2026년 상반기 로드맵</h2>
-        <span class="muted text-sm italic">준비 → 실행 흐름 고정</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-5 grid-gap items-stretch">
-        <div class="md:col-span-3">
-          <table>
-            <thead>
-              <tr>
-                <th style="width: 22%;">단계 / 기간</th>
-                <th>핵심 실행</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="font-extrabold">준비기</div>
-                  <div class="muted text-sm">1월 ~ 5월</div>
-                </td>
-                <td class="leading-relaxed">
-                  • <strong>바이럴 업체 계약:</strong> 채널별 쇼츠/릴스 제작 가이드 수립<br>
-                  • <strong>팬미팅 기획:</strong> 국내외 투어 기획 및 주요 도시 대관 완료<br>
-                  • <strong>MOU 체결:</strong> 매거진/대형 채널 독점 화보·인터뷰 촬영
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="font-extrabold">실행기</div>
-                  <div class="muted text-sm">6월 ~ 8월</div>
-                </td>
-                <td class="leading-relaxed">
-                  • <strong>6월 초:</strong> 국내 팬미팅 개최 (투어 스타트)<br>
-                  • <strong>2~3주 간격:</strong> 일본 → 동남아(태국/베트남 등) 순차 투어<br>
-                  • <strong>디지털 연계:</strong> 도시별 ‘아웃도어/하이엔드’ 브이로그 주간 업로드
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="mt-4 text-sm muted">
-            *목표: 방영 종료 직후 화제성을 “팬덤 응집 + 글로벌 확장”으로 전환
-          </p>
-        </div>
-
-        <div class="md:col-span-2">
-          <!-- 이미지 슬롯 1 -->
-          <div class="media h-full">
-            <!-- 실제 이미지 넣을 때: 아래 img 주석 해제 후 src 교체 -->
-            <!-- <img src="YOUR_IMAGE_URL_OR_PATH" alt="로드맵 키비주얼" /> -->
-            <div class="media-placeholder">
-              <i class="fa-regular fa-image"></i>
-              로드맵 키비주얼 이미지 자리
-            </div>
-            <div class="caption">추천 이미지: ‘대군부인’ 분위기 컷 + 투어 도시 지도/라인(미니멀)</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. Exclusive strategy + image slot -->
-    <section class="card">
-      <div class="section-title">
-        <h2 class="text-xl md:text-2xl font-extrabold">2. 디지털 채널 MOU & Exclusive 전략</h2>
-        <span class="pill">Scarcity</span>
-      </div>
-
-      <div class="accent-left mb-5">
-        <p class="text-base md:text-lg leading-relaxed">
-          단순 노출이 아니라, 특정 대형 채널과의 파트너십으로 <strong>‘노상현다움’</strong>을 고정하고
-          구독자층을 팬덤으로 흡수하는 구조를 만든다.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 grid-gap items-stretch">
-        <div class="rounded-xl bg-gray-50 border border-gray-200 p-5">
-          <div class="flex items-center gap-2 mb-2">
-            <i class="fa-solid fa-users text-[var(--gold)]"></i>
-            <h4 class="font-extrabold">전략적 타겟</h4>
-          </div>
-          <p class="text-sm leading-relaxed muted">
-            딩고/고어헤드/패션 매거진 등 “영상미 + 편집력” 강한 매체 중심 파트너십.
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-gray-50 border border-gray-200 p-5">
-          <div class="flex items-center gap-2 mb-2">
-            <i class="fa-solid fa-graduation-cap text-[var(--gold)]"></i>
-            <h4 class="font-extrabold">글로벌 인터뷰</h4>
-          </div>
-          <p class="text-sm leading-relaxed muted">
-            올-잉글리시 콘텐츠/자막 노출로 “글로벌 타깃” 선명화.
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-gray-50 border border-gray-200 p-5">
-          <div class="flex items-center gap-2 mb-2">
-            <i class="fa-solid fa-camera-retro text-[var(--gold)]"></i>
-            <h4 class="font-extrabold">비하인드 다큐</h4>
-          </div>
-          <p class="text-sm leading-relaxed muted">
-            연습/준비/긴장/현장 스토리로 “인간 노상현” 입덕 포인트 생성.
-          </p>
-        </div>
-      </div>
-
-      <!-- 이미지 슬롯 2 -->
-      <div class="mt-5 media">
-        <!-- <img src="YOUR_IMAGE_URL_OR_PATH" alt="Exclusive 콘텐츠 무드보드" /> -->
-        <div class="media-placeholder">
-          <i class="fa-regular fa-image"></i>
-          Exclusive 무드보드/룩북 이미지 자리 (가로형 추천)
-        </div>
-        <div class="caption">추천 이미지: 하이엔드 룩북(아웃도어/패션) + 인터뷰 스틸컷(미니멀)</div>
-      </div>
-    </section>
-
-    <!-- 3. Viral tactics + image slot -->
-    <section class="card">
-      <div class="section-title">
-        <h2 class="text-xl md:text-2xl font-extrabold">3. 채널별 바이럴 침투 방안</h2>
-        <span class="badge"><i class="fa-solid fa-chart-line"></i> MZ Penetration</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 grid-gap items-start">
-        <div class="space-y-4">
-          <h4 class="font-extrabold border-b border-gray-200 pb-2">Short-form (릴스/쇼츠/틱톡)</h4>
-          <div class="rounded-xl bg-gray-50 border border-gray-200 p-4">
-            <p class="font-bold">① 반전 매력 확산</p>
-            <p class="text-sm muted mt-1">‘대군부인’의 차가움 vs 팬미팅 현장의 다정함 대비 편집</p>
-          </div>
-          <div class="rounded-xl bg-gray-50 border border-gray-200 p-4">
-            <p class="font-bold">② 피지컬/룩 강조</p>
-            <p class="text-sm muted mt-1">181cm 비율 기반 ‘아웃도어 룩북’ + 스포츠 챌린지</p>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <h4 class="font-extrabold border-b border-gray-200 pb-2">Community & SNS</h4>
-          <div class="rounded-xl bg-gray-50 border border-gray-200 p-4">
-            <p class="font-bold">① 고화질 직찍 바이럴</p>
-            <p class="text-sm muted mt-1">X/인스티즈 등에서 미담 + 실물 체감 컷 확산</p>
-          </div>
-          <div class="rounded-xl bg-gray-50 border border-gray-200 p-4">
-            <p class="font-bold">② 글로벌 서사 확장</p>
-            <p class="text-sm muted mt-1">해외 K-드라마 커뮤니티에 성장 서사/콘텐츠 연결</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 이미지 슬롯 3 (2열) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 grid-gap mt-5">
-        <div class="media">
-          <!-- <img src="YOUR_IMAGE_URL_OR_PATH" alt="숏폼 레퍼런스 스틸" /> -->
-          <div class="media-placeholder"><i class="fa-regular fa-image"></i> 숏폼 레퍼런스 이미지</div>
-          <div class="caption">추천 이미지: 3초 후킹(표정/움직임) 강조 컷</div>
-        </div>
-        <div class="media">
-          <!-- <img src="YOUR_IMAGE_URL_OR_PATH" alt="커뮤니티 바이럴 예시" /> -->
-          <div class="media-placeholder"><i class="fa-regular fa-image"></i> 커뮤니티 바이럴 이미지</div>
-          <div class="caption">추천 이미지: 고화질 직찍/무대 조명 컷(텍스트 최소)</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. Tour marketing (dark but unified) -->
-    <section class="card dark-card">
-      <div class="section-title">
-        <h2 class="text-xl md:text-2xl font-extrabold">4. 팬미팅 투어 연계 마케팅</h2>
-        <span class="badge"><i class="fa-solid fa-location-dot"></i> Tour Link</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 grid-gap">
-        <div class="glass-card">
-          <p class="kicker muted">Brand Ambassador</p>
-          <p class="text-lg font-extrabold mt-2">아웃도어 / 하이엔드 착장 고정 노출</p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            투어 기간 동안 협업 브랜드 착장을 공식 콘텐츠/일상 SNS에 자연스럽게 배치해
-            “브랜드 자산 가치”와 “배우 포지셔닝”을 동시 강화.
-          </p>
-        </div>
-
-        <div class="glass-card">
-          <p class="kicker muted">Participation Event</p>
-          <p class="text-lg font-extrabold mt-2">팬 참여형 SNS 챌린지 설계</p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            현장 참여/미션형 이벤트로 팬의 자발 업로드를 유도해
-            바이럴 속도와 도달 범위를 확장.
-          </p>
-        </div>
-      </div>
-
-      <!-- 이미지 슬롯 4 -->
-      <div class="mt-5 media">
-        <!-- <img src="YOUR_IMAGE_URL_OR_PATH" alt="투어 포스터/키비주얼" /> -->
-        <div class="media-placeholder"><i class="fa-regular fa-image"></i> 투어 포스터/키비주얼 이미지 자리</div>
-        <div class="caption">추천 이미지: 도시명/일정이 들어간 포스터(미니멀) 또는 현장 스틸컷</div>
-      </div>
-    </section>
-
-<!-- ========================================================= -->
-<!-- PAGE ADDITION : Channel MOU & Global Fanmeeting Strategy -->
-<!-- ========================================================= -->
-
-<section class="card">
-  <div class="section-title">
-    <h2 class="text-xl md:text-2xl font-extrabold">
-      5. 전략적 MOU 제안 · 디지털 채널 리스트
-    </h2>
-    <span class="badge">
-      <i class="fa-solid fa-handshake"></i> Strategic Partnership
-    </span>
-  </div>
-
-  <p class="text-base leading-relaxed mb-6 muted">
-    배우의 <strong>지적인 이미지</strong>와 <strong>하이엔드 포지셔닝</strong>을 동시에 극대화할 수 있는
-    핵심 디지털 채널을 선별하고, 각 채널에 맞는 <strong>독점(Exclusive) 콘텐츠</strong>를 제안한다.
-  </p>
-
-  <div class="overflow-x-auto">
-    <table>
-      <thead>
-        <tr>
-          <th style="width:16%;">채널 유형</th>
-          <th style="width:22%;">추천 채널</th>
-          <th>독점 콘텐츠(Exclusive) 제안</th>
-          <th style="width:18%;">포지셔닝 포인트</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-extrabold">패션 / 라이프스타일</td>
-          <td>
-            <strong>고어헤드 (GQ KOREA)</strong>
-          </td>
-          <td class="leading-relaxed">
-            <strong>〈노상현의 에센셜 10〉</strong><br>
-            하이엔드 패션 아이템과 아웃도어 장비를 믹스매치한 큐레이션 영상 시리즈
-          </td>
-          <td class="muted">글로벌 감각 · 하이엔드 이미지</td>
-        </tr>
-
-        <tr>
-          <td class="font-extrabold">퍼포먼스 / 음악</td>
-          <td>
-            <strong>딩고 (Dingo)</strong>
-          </td>
-          <td class="leading-relaxed">
-            <strong>〈수고했어 오늘도〉 스페셜</strong><br>
-            투어 종료 후 팬을 직접 찾아가 위로하는 감성 브이로그
-          </td>
-          <td class="muted">대중적 친밀감 · 인간적 매력</td>
-        </tr>
-
-        <tr>
-          <td class="font-extrabold">전문 인터뷰</td>
-          <td>
-            <strong>W Korea 등 글로벌 매거진</strong>
-          </td>
-          <td class="leading-relaxed">
-            <strong>〈The Global Actor〉</strong><br>
-            뱁슨 칼리지 출신의 지성미를 강조한 올-잉글리시 인터뷰
-          </td>
-          <td class="muted">지적 이미지 · 글로벌 타깃</td>
-        </tr>
-
-        <tr>
-          <td class="font-extrabold">취미 / 액티비티</td>
-          <td>
-            <strong>개인 유튜브 (신설)</strong>
-          </td>
-          <td class="leading-relaxed">
-            <strong>〈노상현의 LOG〉</strong><br>
-            투어 중 현지 아웃도어 스팟 탐방 · 러닝 브이로그
-          </td>
-          <td class="muted">아웃도어 · 라이프스타일 브랜딩</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-    <!-- --------------------------------------------------------- -->
-
-    <section class="card">
-    <div class="section-title">
-        <h2 class="text-xl md:text-2xl font-extrabold">
-        6. 국가별 팬미팅 차별화 마케팅 전략
-        </h2>
-        <span class="badge">
-        <i class="fa-solid fa-globe"></i> Global Targeting
-        </span>
-    </div>
-
-    <p class="text-base leading-relaxed mb-6 muted">
-        1월 미팅 이후, 2~5월 준비 기간 동안 세부 기획을 확정하고  
-        <strong>6월부터 국가별 타겟에 최적화된 팬미팅 전략</strong>을 순차 실행한다.
-    </p>
-
-    <!-- KOREA -->
-    <div class="rounded-xl border border-gray-200 p-6 mb-6 bg-gray-50">
-        <h3 class="text-lg font-extrabold mb-2">🇰🇷 한국 · 투어의 시작 (6월 초)</h3>
-        <p class="font-semibold mb-3">컨셉: <span class="muted">‘대군부인’ 종영 감사 · 배우 본연의 모습 공개</span></p>
-
-        <ul class="space-y-2 text-sm leading-relaxed">
-        <li>
-            • <strong>MOU 채널 라이브:</strong>
-            팬미팅 현장 일부를 파트너 채널에서 독점 생중계하여 화제성 집중
-        </li>
-        <li>
-            • <strong>아웃도어 전시존:</strong>
-            공연장 로비에 배우가 실제 사용하는 아웃도어 기어 및 브랜드 화보 전시
-        </li>
-        <li>
-            • <strong>바이럴:</strong>
-            ‘팬들 사이에서 화제 된 노상현의 실물’ 중심 숏폼 확산
-        </li>
-        </ul>
-    </div>
-
-    <!-- JAPAN -->
-    <div class="rounded-xl border border-gray-200 p-6 mb-6 bg-gray-50">
-        <h3 class="text-lg font-extrabold mb-2">🇯🇵 일본 · 세련된 하이엔드 감성 (2~3주 간격)</h3>
-        <p class="font-semibold mb-3">컨셉: <span class="muted">글로벌 하이엔드 · 댄디한 무드</span></p>
-
-        <ul class="space-y-2 text-sm leading-relaxed">
-        <li>
-            • <strong>현지 트렌드 반영:</strong>
-            일본 내 성장 중인 아웃도어 시장 흐름에 맞춰 ‘고프코어’ 스타일 강조
-        </li>
-        <li>
-            • <strong>한정판 굿즈:</strong>
-            스포츠웨어 브랜드와 협업한 일본 한정 티셔츠 · 타월 발매
-        </li>
-        <li>
-            • <strong>바이럴:</strong>
-            일본 현지 셀럽과의 챌린지 · 틱톡 콘텐츠 협업
-        </li>
-        </ul>
-    </div>
-
-    <!-- SOUTHEAST ASIA -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50">
-        <h3 class="text-lg font-extrabold mb-2">🌏 동남아시아 · 글로벌 OTT 스타 포지션</h3>
-        <p class="font-semibold mb-3">컨셉: <span class="muted">‘파친코’ 이후 글로벌 비주얼 아이콘</span></p>
-
-        <ul class="space-y-2 text-sm leading-relaxed">
-        <li>
-            • <strong>커뮤니티 소통:</strong>
-            현지 MZ세대가 활발한 플랫폼(페이스북 · X) 중심 참여형 이벤트
-        </li>
-        <li>
-            • <strong>사회공헌 연계:</strong>
-            현지 환경 단체와 협업한 소규모 아웃도어 활동(플로깅) 콘텐츠화
-        </li>
-        <li>
-            • <strong>바이럴:</strong>
-            글로벌 팬덤 대상 ‘입덕 영상’ 공모전 및 숏폼 챌린지 진행
-        </li>
-        </ul>
-    </div>
-    </section>
-
-  <!-- ========================================================= -->
-  <!-- PAGE ADDITION : Content Production Guidelines (SOP)       -->
-  <!-- ========================================================= -->
-
-  <section class="card">
-    <div class="section-title">
-      <h2 class="text-xl md:text-2xl font-extrabold">
-        7. 노상현 배우 콘텐츠 제작 가이드라인 (SOP)
-      </h2>
-      <span class="badge">
-        <i class="fa-solid fa-clapperboard"></i> Production Guide
-      </span>
-    </div>
-
-    <p class="text-base leading-relaxed muted mb-6">
-      본 페이지는 내부 제작팀 및 바이럴/콘텐츠 대행사가 공통으로 참조하는
-      <strong>톤앤매너·소재 선택·채널별 제작 기준</strong>이다.
-    </p>
-
-    <!-- 1) Branding Keywords -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">1) 브랜딩 핵심 키워드 · 톤앤매너</h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">핵심 키워드</p>
-          <ul class="text-sm leading-relaxed space-y-2">
-            <li>• <strong>Global High-end</strong> (글로벌 하이엔드)</li>
-            <li>• <strong>Intellectual & Sexy</strong> (지적인 섹시함)</li>
-            <li>• <strong>Active Lifestyle</strong> (액티브 라이프스타일)</li>
-          </ul>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">톤앤매너</p>
-          <ul class="text-sm leading-relaxed space-y-2">
-            <li>• 기본 무드: <strong>Sophisticated</strong> (세련되고 품격 있는)</li>
-            <li>• 소통 무드: <strong>Authentic & Friendly</strong> (진정성 있고 친근한)</li>
-            <li class="muted">* “차분하고 고급스러운 화면” 위에 “말투는 따뜻하게”를 기본 원칙으로 유지</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2) SWOT 기반 제작전략 -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">2) SWOT 기반 콘텐츠 제작 전략 (바이럴 업체 필수 참고)</h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Strengths -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-3 text-[var(--gold)]">✅ Strengths · 장점 극대화</p>
-          <ul class="text-sm leading-relaxed space-y-3">
-            <li>
-              • <strong>지적 자산 서사화</strong><br>
-              뱁슨 칼리지 경제학 전공, 글로벌 감각을 “배우의 서사”로 활용.<br>
-              <span class="muted">→ 영어 인터뷰/전시/독서 등 ‘A-Cut’ 중심의 고퀄 영상</span>
-            </li>
-            <li>
-              • <strong>피지컬/비주얼</strong><br>
-              181cm 모델 출신 신체 조건을 “워너비”로 설계.<br>
-              <span class="muted">→ 스포츠웨어 착용 시 전신 비율이 살아나는 숏폼 필수</span>
-            </li>
-            <li>
-              • <strong>연기력 기반 신뢰</strong><br>
-              수상/작품 이력 + 촬영장 비하인드의 프로페셔널함을 바이럴 포인트로 고정.
-            </li>
-          </ul>
-        </div>
-
-        <!-- Weaknesses -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-3 text-gray-700">⚠️ Weaknesses · 약점 보완/반전</p>
-          <ul class="text-sm leading-relaxed space-y-3">
-            <li>
-              • <strong>이미지 모호함 타파</strong><br>
-              ‘대군부인’의 강한 캐릭터 이미지에만 갇히지 않도록<br>
-              <span class="muted">→ 일상 미소/팬 소통 등 ‘B-Cut’ 적절히 믹스</span>
-            </li>
-            <li>
-              • <strong>차별화 포인트 노출</strong><br>
-              투어 중 현지 팬들과 영어로 직접 소통하는 장면 등<br>
-              <span class="muted">→ “독보적 글로벌 경쟁력”을 짧게라도 반복 노출</span>
-            </li>
-            <li>
-              • <strong>일관된 무드 유지</strong><br>
-              SNS 무드를 <strong>아웃도어 + 하이엔드</strong>로 통일.<br>
-              <span class="muted">→ 콘텐츠 톤 흔들림(브랜딩 일관성 부재) 방지</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3) Channel Guidelines -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">3) 채널별 상세 가이드라인</h3>
-
-      <div class="overflow-x-auto">
-        <table>
-          <thead>
-            <tr>
-              <th style="width:22%;">채널</th>
-              <th>제작 방향 / 가이드</th>
-              <th style="width:22%;">비고</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="font-extrabold">인스타그램 (Feed/Story)</td>
-              <td class="leading-relaxed">
-                하이엔드 화보 무드와 아웃도어 라이프 균형.<br>
-                협찬 제품 노출은 “광고”보다 <strong>OOTD</strong>처럼 자연스럽게 연출.
-              </td>
-              <td class="muted">프리미엄 감성 유지</td>
-            </tr>
-            <tr>
-              <td class="font-extrabold">릴스/쇼츠 (Short-form)</td>
-              <td class="leading-relaxed">
-                ‘대군부인’ 카리스마 vs 실제 모습 반전 챌린지.<br>
-                운동/아웃도어 모먼트는 <strong>짧고 임팩트</strong> 있게.
-              </td>
-              <td class="muted">MZ 타겟팅</td>
-            </tr>
-            <tr>
-              <td class="font-extrabold">유튜브 (Long-form)</td>
-              <td class="leading-relaxed">
-                MOU 채널 전용: 글로벌 배우의 면모를 보여주는 심층 다큐/인터뷰.<br>
-                팬미팅 투어 비하인드 시리즈로 서사 축적.
-              </td>
-              <td class="muted">팬덤 결집 · 깊은 서사</td>
-            </tr>
-            <tr>
-              <td class="font-extrabold">커뮤니티 (바이럴)</td>
-              <td class="leading-relaxed">
-                팬미팅 미담/실물 후기 중심의 “직찍 느낌” 확산 유도.<br>
-                고화질 이미지는 <strong>과장 없이</strong> 사실적인 톤으로 배포.
-              </td>
-              <td class="muted">호감도 · 인지도 상승</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- 4) Timeline + KPI -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50">
-      <h3 class="text-lg font-extrabold mb-4">4) 실행 일정 및 성과 지표 (KPI)</h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="kicker">Phase 1</p>
-          <p class="font-extrabold mt-1">준비/제작 (1~5월)</p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            SNS 채널 정비 · 톤 통일<br>
-            MOU 채널 독점 콘텐츠 기획/촬영 완료
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="kicker">Phase 2</p>
-          <p class="font-extrabold mt-1">집중 확산 (6~8월)</p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            한국 → 일본 → 동남아 투어 흐름에 맞춰<br>
-            2~3주 간격 국가별 맞춤 바이럴 릴리즈
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="kicker">Goal</p>
-          <p class="font-extrabold mt-1">성과 목표</p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            장기적으로 배우 브랜드 가치 상승 →<br>
-            광고 모델 섭외 증가 · 글로벌 인지도 확보
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================= -->
-  <!-- PAGE ADDITION : Fanmeeting Tour Merchandise Strategy     -->
-  <!-- ========================================================= -->
-
-  <section class="card">
-    <div class="section-title">
-      <h2 class="text-xl md:text-2xl font-extrabold">
-        8. 노상현 팬미팅 투어 브랜딩 굿즈 전략
-      </h2>
-      <span class="badge">
-        <i class="fa-solid fa-gift"></i> Merchandise Strategy
-      </span>
-    </div>
-
-    <p class="text-base leading-relaxed muted mb-6">
-      본 굿즈 전략은 단순 기념품이 아닌,  
-      <strong>배우의 브랜드 이미지 · 팬 경험 · 투어 수익성</strong>을 동시에 강화하는
-      <strong>브랜딩 자산</strong>으로 설계한다.
-    </p>
-
-    <!-- 1. High-end x Outdoor -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">
-        1) [하이엔드 × 아웃도어] 실용 아이템
-      </h3>
-      <p class="muted mb-4">
-        배우의 건강하고 활동적인 라이프스타일을 직관적으로 체험하게 하는 굿즈 라인업
-      </p>
-
-      <ul class="space-y-4 text-sm leading-relaxed">
-        <li>
-          • <strong>프리미엄 리유저블 텀블러 / 물병</strong><br>
-          ‘노상현의 아웃도어 라이프’ 컨셉을 담은 견고하고 미니멀한 디자인.<br>
-          <span class="muted">→ 장기 사용 가능한 데일리 아이템으로 브랜드 노출 지속</span>
-        </li>
-        <li>
-          • <strong>고기능성 스포츠 타월</strong><br>
-          팬미팅 현장의 열기를 식혀주는 실용 아이템.<br>
-          <span class="muted">→ 스포츠웨어 브랜드 협업 느낌의 로고 중심 디자인 추천</span>
-        </li>
-        <li>
-          • <strong>아웃도어 카라비너 키링</strong><br>
-          가방·벨트 고리에 활용 가능한 금속 소재 키링.<br>
-          <span class="muted">→ 지적이고 세련된 메탈 질감으로 하이엔드 무드 강화</span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- 2. Global x Intellectual -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">
-        2) [글로벌 × 지성미] 감성 아이템
-      </h3>
-      <p class="muted mb-4">
-        경제학 전공과 글로벌 감각을 가진 배우의 ‘지적인 서사’를 투영한 컬렉션
-      </p>
-
-      <ul class="space-y-4 text-sm leading-relaxed">
-        <li>
-          • <strong>독점 화보 포토북 & 엽서 세트</strong><br>
-          MOU 매거진 미공개 컷 또는 하이엔드 브랜드 화보 수록.<br>
-          <span class="muted">→ 고급 인쇄 사양으로 소장 가치 극대화</span>
-        </li>
-        <li>
-          • <strong>투어 한정 패브릭 포스터</strong><br>
-          팬미팅 투어 로드맵 + 배우 실루엣을 담은 감성 디자인.<br>
-          <span class="muted">→ 인테리어 소품으로 활용 가능</span>
-        </li>
-        <li>
-          • <strong>영문 메시지 각인 볼펜 / 문구 세트</strong><br>
-          배우가 직접 작성한 영어 문구를 각인한 한정 아이템.<br>
-          <span class="muted">→ 지적인 이미지 상징화</span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- 3. Country Limited -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">
-        3) [국가별 한정] 스페셜 에디션
-      </h3>
-      <p class="muted mb-4">
-        6월부터 시작되는 투어 일정에 맞춰,
-        각 국가의 라이프스타일·기후·트렌드를 반영한 한정 굿즈
-      </p>
-
-      <div class="overflow-x-auto">
-        <table>
-          <thead>
-            <tr>
-              <th style="width:20%;">국가</th>
-              <th>추천 아이템</th>
-              <th style="width:28%;">브랜딩 포인트</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="font-extrabold">🇰🇷 한국 (6월)</td>
-              <td>피크닉 매트 (돗자리)</td>
-              <td class="muted">한강·야외 활동 연계 · 아웃도어 이미지 강화</td>
-            </tr>
-            <tr>
-              <td class="font-extrabold">🇯🇵 일본</td>
-              <td>에코백 & 캔버스 파우치</td>
-              <td class="muted">고프코어 · 데일리룩 트렌드 반영</td>
-            </tr>
-            <tr>
-              <td class="font-extrabold">🌏 동남아</td>
-              <td>핸디 팬(손선풍기) / 쿨링 패치</td>
-              <td class="muted">기후 고려 · 친근하고 배려 깊은 이미지</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Tips -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50">
-      <h3 class="text-lg font-extrabold mb-4">
-        💡 굿즈 제작 · 배포 전략 Tip
-      </h3>
-
-      <ul class="space-y-3 text-sm leading-relaxed">
-        <li>
-          • <strong>친환경 소재 사용</strong><br>
-          재생 소재(Recycled)를 활용해 ‘친환경 아웃도어’ 글로벌 트렌드 반영
-        </li>
-        <li>
-          • <strong>MOU 브랜드 로고 자연 노출</strong><br>
-          협업 브랜드·디지털 채널 로고를 절제된 방식으로 배치해<br>
-          <span class="muted">→ 굿즈 자체를 ‘한정판 협업 제품’처럼 설계</span>
-        </li>
-        <li>
-          • <strong>랜덤 포토카드 이벤트</strong><br>
-          지적·섹시한 반전 매력이 담긴 랜덤 포토카드 삽입.<br>
-          <span class="muted">→ 수집 욕구 자극 + SNS 인증 바이럴 유도</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <!-- ========================================================= -->
-  <!-- PAGE ADDITION : Next Project Branding & Marketing Plan   -->
-  <!-- ========================================================= -->
-
-  <section class="card">
-    <div class="section-title">
-      <h2 class="text-xl md:text-2xl font-extrabold">
-        9. 차기작 단계별 브랜딩 및 마케팅 전략
-      </h2>
-      <span class="badge">
-        <i class="fa-solid fa-film"></i> Next Project Strategy
-      </span>
-    </div>
-
-    <p class="text-base leading-relaxed muted mb-6">
-      본 전략은 차기작 확정 시점부터 촬영·방영·공백기까지를 하나의 흐름으로 관리하여  
-      <strong>작품 변화에도 배우 브랜드의 일관성과 노출 밀도를 유지</strong>하는 것을 목표로 한다.
-    </p>
-
-    <!-- 1. Build-up -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">
-        1) 작품 확정 및 촬영 준비기 (Build-up)
-      </h3>
-
-      <ul class="space-y-3 text-sm leading-relaxed">
-        <li>
-          • <strong>브랜드 앰배서더 연계</strong><br>
-          차기작 캐릭터가 ‘지적’ 또는 ‘활동적’인 면모를 지닐 경우,  
-          해당 이미지와 어울리는 <strong>아웃도어/하이엔드 브랜드 의상</strong>을  
-          대본 리딩, 촬영장 출근길 등에 자연스럽게 노출.
-        </li>
-        <li>
-          • <strong>MOU 채널 독점 인터뷰</strong><br>
-          차기작 선택 이유, 배우로서의 고민을 담은 심층 인터뷰를  
-          파트너 매거진/디지털 채널에서 독점 공개하여 <strong>전문성 강화</strong>.
-        </li>
-      </ul>
-    </div>
-
-    <!-- 2. Keep-going -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">
-        2) 촬영 진행기 (Keep-going)
-      </h3>
-
-      <p class="muted mb-4">
-        촬영 중 직접적인 외부 활동이 제한되는 시기에는  
-        <strong>‘비하인드 콘텐츠’와 ‘공백기 대응 콘텐츠’</strong>를 중심으로 노출을 유지한다.
-      </p>
-
-      <ul class="space-y-3 text-sm leading-relaxed">
-        <li>
-          • <strong>‘현장 비하인드’ 시리즈화</strong><br>
-          촬영장의 프로페셔널한 모습과 쉬는 시간의 친근한 모습을  
-          숏폼 콘텐츠로 제작하여 정기 업로드.
-        </li>
-        <li>
-          • <strong>커피차 / 간식차 바이럴</strong><br>
-          팬 서포트 현장에서 브랜드 제품 사용 장면과  
-          팬들에게 감사 인사를 전하는 콘텐츠로 <strong>대중적 친밀성 유지</strong>.
-        </li>
-        <li>
-          • <strong>디지털 광고 캠페인 릴리즈</strong><br>
-          촬영 전 확보한 아웃도어/스포츠웨어 브랜드 시즌 캠페인을  
-          이 시기에 집중 노출하여 미디어 공백 최소화.
-        </li>
-      </ul>
-    </div>
-
-    <!-- 3. Peak-time -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">
-        3) 방영 · 개봉 전후 (Peak-time)
-      </h3>
-
-      <ul class="space-y-3 text-sm leading-relaxed">
-        <li>
-          • <strong>글로벌 프로모션</strong><br>
-          글로벌 OTT 작품의 경우, 유창한 영어 실력을 활용한  
-          해외 매체 인터뷰 콘텐츠를 재확산하여  
-          <strong>‘글로벌 배우’ 포지셔닝을 재확인</strong>.
-        </li>
-        <li>
-          • <strong>참여형 바이럴 이벤트</strong><br>
-          차기작 캐릭터의 특징을 살린 챌린지 또는  
-          브랜드 콜라보 이벤트로 대중 참여 유도.
-        </li>
-      </ul>
-    </div>
-
-    <!-- Viral Guide -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">
-        💡 차기작 시기 바이럴 업체 가이드 (핵심)
-      </h3>
-
-      <ul class="space-y-3 text-sm leading-relaxed">
-        <li>
-          • <strong>콘텐츠 비축 원칙</strong><br>
-          촬영 전 ‘아웃도어 라이프’ · ‘하이엔드 화보’ 콘텐츠를 충분히 확보하여  
-          공백기에도 일관된 이미지가 SNS에 노출되도록 운영.
-        </li>
-        <li>
-          • <strong>커뮤니티 모니터링</strong><br>
-          차기작 관련 반응을 실시간 체크하고,  
-          배우의 강점(지적 이미지, 신체 조건)이 부각되는 장면을  
-          짤(GIF)·숏폼으로 가공해 확산.
-        </li>
-      </ul>
-    </div>
-
-    <!-- Project-specific -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">
-        4) 차기작별 맞춤 브랜딩 전략
-      </h3>
-
-      <div class="space-y-5">
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">🎬 장르물 · &lt;골드디거&gt;</p>
-          <p class="muted mb-3">지적 섹시 · 글로벌 하이엔드</p>
-          <ul class="text-sm leading-relaxed space-y-2">
-            <li>• <strong>브랜딩 컨셉:</strong> Professional & Luxury</li>
-            <li>• <strong>MOU 채널:</strong> GQ, W 등과 ‘차갑고 지적인’ 독점 화보</li>
-            <li>• <strong>바이럴 포인트:</strong> 수트 핏·착장 정보 콘텐츠 확산 → 하이엔드 브랜드 주목 유도</li>
-          </ul>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">💖 로맨스 · &lt;벌짓&gt;</p>
-          <p class="muted mb-3">친근함 · 라이프스타일</p>
-          <ul class="text-sm leading-relaxed space-y-2">
-            <li>• <strong>브랜딩 컨셉:</strong> Warm & Active</li>
-            <li>• <strong>SNS 활용:</strong> 대기 시간·케미 중심 릴스/쇼츠 적극 활용</li>
-            <li>• <strong>아웃도어 연계:</strong> 데이트 룩에 스포츠웨어 자연 믹스</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bridge -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50">
-      <h3 class="text-lg font-extrabold mb-4">
-        5) 작품 활동 중 공백기 관리 (Bridge 마케팅)
-      </h3>
-
-      <ul class="space-y-3 text-sm leading-relaxed">
-        <li>
-          • <strong>독점 비하인드 교차 편집</strong><br>
-          ‘골드디거’의 긴장감과 ‘벌짓’의 다정한 분위기를 대비 편집하여 노출.
-        </li>
-        <li>
-          • <strong>글로벌 소통 유지</strong><br>
-          영문 자막이 포함된 촬영장 브이로그를 정기 배포하여 해외 팬 접점 유지.
-        </li>
-        <li>
-          • <strong>시즌 캠페인 집행</strong><br>
-          촬영 전 확보한 브랜드 시즌 광고를 방영 시기에 맞춰 집중 노출.
-        </li>
-      </ul>
-    </div>
-  </section>
-  <!-- ========================================================= -->
-  <!-- PAGE ADDITION : Self SNS Content Guide (Minimal Version) -->
-  <!-- ========================================================= -->
-
-  <section class="card">
-    <div class="section-title">
-      <h2 class="text-xl md:text-2xl font-extrabold">
-        10. 노상현 맞춤형 SNS 셀프 콘텐츠 가이드 (담백 버전)
-      </h2>
-      <span class="badge">
-        <i class="fa-solid fa-mobile-screen-button"></i> Self Content
-      </span>
-    </div>
-
-    <p class="text-base leading-relaxed muted mb-6">
-      본 가이드는 “말로 설명하는 콘텐츠”가 아니라,
-      <strong>비주얼과 분위기로 압도하는 미니멀 운영</strong>을 전제로 한다.<br>
-      공통 원칙: <strong>텍스트 최소 · 과한 멘트/설정 금지 · 브랜드 태그는 절제</strong>.
-    </p>
-
-    <!-- Quick Rules -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <h3 class="text-lg font-extrabold mb-4">공통 운영 룰 (3줄 버전)</h3>
-      <ul class="space-y-2 text-sm leading-relaxed">
-        <li>• <strong>말을 줄이고</strong> 프레임을 늘린다: 설명 대신 장면과 소리.</li>
-        <li>• <strong>캡션은 짧게</strong>: 도시명/시간/이모지 1개 정도면 충분.</li>
-        <li>• <strong>브랜드는 “보이게”</strong>: 과한 언급 대신 태그 1~2개로 정리.</li>
-      </ul>
-    </div>
-
-    <!-- 1) Fashion Week -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <div class="flex items-start justify-between gap-4 mb-3">
-        <div>
-          <h3 class="text-lg font-extrabold">🗼 유럽 패션위크: <span class="text-[var(--gold)]">The Silent Luxury</span></h3>
-          <p class="muted text-sm mt-1">
-            작위적인 멘트/설정보다 <strong>분위기와 비주얼</strong>로 압도하는 전략
-          </p>
-        </div>
-        <span class="badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Minimal Mood</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Reels -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">[Reels] 컷 편집 준비 영상</p>
-          <p class="text-sm leading-relaxed">
-            <strong>내용:</strong> 거울 셀카로 길게 말하지 않고, 셔츠 단추를 채우거나 자켓을 걸치는
-            찰나를 음악에 맞춰 짧게 끊어 편집.
-          </p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            <strong>포인트:</strong> 마지막에 문을 나서기 전 카메라를 “툭” 한 번 보고 나가는 정도.
-            말은 생략하거나 아주 짧게 <strong>“Off to the show”</strong> 정도만.
-          </p>
-        </div>
-
-        <!-- Story -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">[Story] 현장의 시선</p>
-          <p class="text-sm leading-relaxed">
-            <strong>내용:</strong> 얼굴 위주가 아니라 본인 시선에서 보이는 쇼장 풍경,
-            이름표가 놓인 시트, 하이라이트 장면 위주.
-          </p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            <strong>포인트:</strong> 텍스트 최소. 브랜드 계정만 태그하고 무심하게 공유.
-          </p>
-        </div>
-
-        <!-- Feed -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">[Feed] 파파라치 컷 느낌의 일상</p>
-          <p class="text-sm leading-relaxed">
-            <strong>내용:</strong> 정면 응시 포즈 대신 길을 걷거나 메뉴판을 보는
-            자연스러운 순간을 멀리서 찍은 전신 사진.
-          </p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            <strong>포인트:</strong> 비율이 자연스럽게 드러나게. 캡션은
-            이모지 1개 또는 도시명만.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2) Sports Event -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50">
-      <div class="flex items-start justify-between gap-4 mb-3">
-        <div>
-          <h3 class="text-lg font-extrabold">🏃 글로벌 스포츠 행사: <span class="text-[var(--gold)]">The Natural Athlete</span></h3>
-          <p class="muted text-sm mt-1">
-            건강함을 “보여주기”가 아니라 <strong>루틴처럼 보이게</strong> 만드는 전략
-          </p>
-        </div>
-        <span class="badge"><i class="fa-solid fa-person-running"></i> Real Energy</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Reels -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">[Reels] 무음악/현장음 러닝</p>
-          <p class="text-sm leading-relaxed">
-            <strong>내용:</strong> 화려한 편집 없이 숨소리·발소리가 들리는 리얼 러닝 영상.
-          </p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            <strong>포인트:</strong> 특별한 연출 없이 “운동에 집중하는 모습” 자체가
-            지적이고 건강한 에너지로 전달됨.
-          </p>
-        </div>
-
-        <!-- Story -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">[Story] 로컬 감성</p>
-          <p class="text-sm leading-relaxed">
-            <strong>내용:</strong> 경기장 화려함보다 경기 전후 마시는 음료,
-            현지에서 신은 신발, 현장의 분위기를 짧게 담기.
-          </p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            <strong>포인트:</strong> “Work hard, Play hard”가 부담스럽다면
-            <strong>기온</strong>이나 <strong>운동 시간 기록(워치 캡처)</strong>만 올려도 충분.
-          </p>
-        </div>
-
-        <!-- Feed -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">[Feed] 운동 직후의 담백한 모습</p>
-          <p class="text-sm leading-relaxed">
-            <strong>내용:</strong> 정제된 셀피보다 운동 후 벤치에 앉아 쉬는 모습,
-            혹은 뒷모습/측면샷.
-          </p>
-          <p class="text-sm muted mt-2 leading-relaxed">
-            <strong>포인트:</strong> 꾸밈을 뺀 ‘Real’함이 팬들에게는
-            더 큰 진정성으로 다가감.
-          </p>
-        </div>
-      </div>
-    </div>
-        <!-- =============================== -->
-    <!-- 3) Curated Self Content Concepts -->
-    <!-- =============================== -->
-
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mt-10">
-      <div class="section-subtitle mb-4">
-        <h3 class="text-lg font-extrabold">
-          확장 셀프 콘텐츠 콘셉트 (Advanced)
-        </h3>
-        <p class="muted text-sm mt-1">
-          얼굴 노출을 최소화하면서도 배우의 취향·무드·라이프스타일을 축적하는 방식
-        </p>
-      </div>
-
-      <div class="space-y-8">
-
-        <!-- 1. The Curator -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <div class="flex items-start justify-between gap-4 mb-3">
-            <h4 class="font-extrabold text-base">
-              🖼️ The Curator <span class="muted font-normal">(지적 취향 기록)</span>
-            </h4>
-            <span class="badge"><i class="fa-solid fa-book"></i> Taste</span>
-          </div>
-
-          <p class="text-sm leading-relaxed mb-3">
-            배우의 얼굴이 아닌 <strong>배우의 시선</strong>을 통해
-            지적인 이미지를 자연스럽게 구축하는 콘셉트
-          </p>
-
-          <ul class="space-y-2 text-sm leading-relaxed">
-            <li>
-              • <strong>[Story / Feed] 시선 공유</strong><br>
-              투어 중 방문한 현지 갤러리의 작품, 건축물의 질감,
-              혹은 읽고 있는 원서의 한 페이지를 무심하게 촬영하여 공유
-            </li>
-            <li>
-              • <strong>[Point] 무언의 대화</strong><br>
-              긴 설명 대신 <strong>Location Tag</strong>만 남겨
-              뱁슨 칼리지 출신의 지적인 배경이 자연스럽게 묻어나게 함
-            </li>
-            <li>
-              • <strong>[Effect] 브랜드 신뢰도</strong><br>
-              하이엔드 브랜드가 선호하는
-              <strong>‘깊이 있는 아티스트’</strong> 이미지 공고화
-            </li>
-          </ul>
-        </div>
-
-        <!-- 2. The Monologue -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <div class="flex items-start justify-between gap-4 mb-3">
-            <h4 class="font-extrabold text-base">
-              🎞️ The Monologue <span class="muted font-normal">(흑백 모노로그)</span>
-            </h4>
-            <span class="badge"><i class="fa-solid fa-circle-half-stroke"></i> B&W</span>
-          </div>
-
-          <p class="text-sm leading-relaxed mb-3">
-            기능미와 클래식함을 결합해
-            <strong>시각적 소음을 최소화</strong>하는 셀프 콘텐츠
-          </p>
-
-          <ul class="space-y-2 text-sm leading-relaxed">
-            <li>
-              • <strong>[Feed] 흑백의 미학</strong><br>
-              유럽 패션위크, 투어 도시의 비 오는 거리,
-              이동 중인 차 안의 순간을 흑백 사진으로 업로드
-            </li>
-            <li>
-              • <strong>[Point] 질감 강조</strong><br>
-              옷의 핏이나 표정보다
-              <strong>빛·그림자·공간의 대비</strong>에 집중
-            </li>
-            <li>
-              • <strong>[Effect] 독보적 분위기</strong><br>
-              색감 없이도 압도되는 비주얼로
-              하이엔드 포지셔닝 완성
-            </li>
-          </ul>
-        </div>
-
-        <!-- 3. The Gear -->
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <div class="flex items-start justify-between gap-4 mb-3">
-            <h4 class="font-extrabold text-base">
-              🛠️ The Gear <span class="muted font-normal">(기능적 미니멀리즘)</span>
-            </h4>
-            <span class="badge"><i class="fa-solid fa-screwdriver-wrench"></i> Tool</span>
-          </div>
-
-          <p class="text-sm leading-relaxed mb-3">
-            아웃도어를 ‘콘셉트’가 아니라
-            <strong>실제 사용하는 도구</strong>로 보여주는 방식
-          </p>
-
-          <ul class="space-y-2 text-sm leading-relaxed">
-            <li>
-              • <strong>[Reels] 무심한 기어 체크</strong><br>
-              신발 끈을 묶는 손, 백팩 스트랩을 조절하는 동작 등
-              손 위주의 클로즈업 영상
-            </li>
-            <li>
-              • <strong>[Point] 리얼리티</strong><br>
-              얼굴 노출 없이
-              <strong>지퍼 소리·마찰음·동작</strong>에만 집중
-            </li>
-            <li>
-              • <strong>[Effect] 앰배서더 자질</strong><br>
-              아웃도어 활동을 실제 라이프스타일로 즐기는 배우임을 증명
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-  
-  <!-- ========================================================= -->
-  <!-- PAGE ADDITION : Premium Branding Ideas (High-end)        -->
-  <!-- ========================================================= -->
-
-  <section class="card">
-    <div class="section-title">
-      <h2 class="text-xl md:text-2xl font-extrabold">
-        11. 하이엔드 브랜딩 아이디어 패키지 (브랜드·매거진 제안용)
-      </h2>
-      <span class="badge">
-        <i class="fa-solid fa-gem"></i> Premium Ideas
-      </span>
-    </div>
-
-    <p class="text-base leading-relaxed muted mb-6">
-      본 페이지는 “과한 셀프 PR” 없이도 배우의 지적 취향과 글로벌 하이엔드 포지셔닝을 강화하는
-      <strong>콘텐츠 아이디어 3종 패키지</strong>이다.  
-      공통 원칙: <strong>말보다 무드 · 과장보다 디테일 · 노출보다 축적</strong>.
-    </p>
-
-    <!-- 1) The Curator -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <div class="flex items-start justify-between gap-4 mb-3">
-        <div>
-          <h3 class="text-lg font-extrabold">
-            1) “The Curator” 컨셉 · 디지털 아카이브
-          </h3>
-          <p class="muted text-sm mt-1">
-            얼굴 중심 콘텐츠가 아니라, <strong>지적 취향</strong>을 공유해 하이엔드 이미지를 굳히는 전략
-          </p>
-        </div>
-        <span class="badge"><i class="fa-solid fa-book-open"></i> Taste Archive</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">아이디어</p>
-          <p class="text-sm leading-relaxed">
-            인스타그램 <strong>하이라이트</strong> 또는 게시물에
-            투어 중 방문한 <strong>갤러리</strong>, <strong>건축물</strong>,
-            읽고 있는 <strong>원서</strong> 사진을 무심하게 “툭” 업로드.
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">브랜딩 포인트</p>
-          <p class="text-sm leading-relaxed">
-            지적 배경이 “설명 없이” 드러남.<br>
-            브랜드 입장에서는
-            <strong>철학을 이해할 수 있는 깊이</strong>가 있는 배우로 판단.
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">바이럴 업체 가이드</p>
-          <p class="text-sm leading-relaxed">
-            <strong>“노상현의 취향(Taste)”</strong> 테마로 커뮤니티 확산.<br>
-            <span class="muted">→ “얼굴만큼 취향도 고급스러운 배우” 서사 구축</span>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2) Functional Minimalism -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-      <div class="flex items-start justify-between gap-4 mb-3">
-        <div>
-          <h3 class="text-lg font-extrabold">
-            2) “Functional Minimalism” 화보 (브랜드 제안용)
-          </h3>
-          <p class="muted text-sm mt-1">
-            아웃도어×하이엔드를 결합하되, <strong>무채색·기능미·무드</strong>에 집중하는 콘텐츠
-          </p>
-        </div>
-        <span class="badge"><i class="fa-solid fa-wind"></i> Tech-wear Mood</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">아이디어</p>
-          <p class="text-sm leading-relaxed">
-            유럽 패션위크/투어 중 비·바람 같은 날씨를 피하지 않고
-            <strong>고어텍스 자켓</strong> 또는 기능성 의류로 걷는 장면 촬영.
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">브랜딩 포인트</p>
-          <p class="text-sm leading-relaxed">
-            “이 옷 좋아요” 같은 멘트 없이도<br>
-            피지컬 + 날씨 무드로
-            <strong>활동성</strong>과 <strong>고급스러움</strong>을 동시에 증명.
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">실행 방안</p>
-          <p class="text-sm leading-relaxed">
-            1월 미팅 시 바이럴 업체에<br>
-            <strong>“자연스러운 일상 속 기능미(Tech-wear)”</strong> 중심 숏폼을
-            기획해달라고 요청.
-          </p>
-        </div>
-      </div>
-
-      <!-- Optional image slot -->
-      <div class="mt-5 media">
-        <!-- <img src="YOUR_IMAGE_URL_OR_PATH" alt="Functional Minimalism mood board" /> -->
-        <div class="media-placeholder">
-          <i class="fa-regular fa-image"></i>
-          이미지 슬롯: 무채색 기능성 착장 · 비/바람 무드 컷 (브랜드 제안용)
-        </div>
-        <div class="caption">추천: “비 오는 거리 + 테크웨어 + 전신 비율” (텍스트 최소)</div>
-      </div>
-    </div>
-
-    <!-- 3) Global Exclusive Audio Docent -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50">
-      <div class="flex items-start justify-between gap-4 mb-3">
-        <div>
-          <h3 class="text-lg font-extrabold">
-            3) “Global Exclusive” MOU 한정 오디오 도슨트
-          </h3>
-          <p class="muted text-sm mt-1">
-            시각적 오글거림 없이, <strong>목소리</strong>로 품격과 깊이를 각인시키는 방식
-          </p>
-        </div>
-        <span class="badge"><i class="fa-solid fa-headphones"></i> Audio Exclusive</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">아이디어</p>
-          <p class="text-sm leading-relaxed">
-            MOU 디지털 매거진에서<br>
-            <strong>‘노상현이 읽어주는 전시 가이드’</strong> 또는<br>
-            <strong>‘여행지에서 듣기 좋은 플레이리스트 인터뷰’</strong>를
-            <strong>영어+한국어</strong>로 진행.
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">브랜딩 포인트</p>
-          <p class="text-sm leading-relaxed">
-            얼굴 노출 과다 없이도 참여 가능해
-            배우 거부감이 낮고,<br>
-            팬에게는 <strong>익스클루시브 가치</strong> 제공.
-          </p>
-        </div>
-
-        <div class="rounded-xl bg-white border border-gray-200 p-5">
-          <p class="font-extrabold mb-2">기대 효과</p>
-          <p class="text-sm leading-relaxed">
-            하이엔드 브랜드가 선호하는
-            <strong>차분하고 품격 있는 이미지</strong>를
-            목소리만으로도 각인.
-          </p>
-        </div>
-      </div>
-    </div>
-      <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-    <div class="flex items-start justify-between gap-4 mb-3">
+<body>
+  <nav class="fixed top-0 w-full top-nav bg-white/90 backdrop-blur-2xl border-b z-50 flex items-center justify-between px-12">
+    <div class="flex items-center gap-6">
+      <div class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg">S</div>
       <div>
-        <h3 class="text-lg font-extrabold">확장 아이디어 (4–8)</h3>
-        <p class="muted text-sm mt-1">
-          노출을 늘리지 않고도 <strong>무드·디테일·존재감</strong>으로 하이엔드를 증명하는 옵션
-        </p>
-      </div>
-      <span class="badge"><i class="fa-solid fa-layer-group"></i> Expanded</span>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-      <!-- 4) Stillness -->
-      <div class="rounded-xl bg-white border border-gray-200 p-5">
-        <div class="flex items-start justify-between gap-3 mb-2">
-          <p class="font-extrabold">4) “Stillness” · 정지된 순간의 힘</p>
-          <span class="badge"><i class="fa-solid fa-moon"></i> Silence</span>
-        </div>
-        <p class="text-sm muted mb-3">(Silence as Luxury)</p>
-
-        <p class="text-sm leading-relaxed mb-3">
-          <strong>컨셉:</strong> 움직임이 아니라 <strong>정지된 순간</strong>으로 존재감을 각인.
-          “아무것도 하지 않음” 자체가 콘텐츠가 된다.
-        </p>
-
-        <ul class="space-y-2 text-sm leading-relaxed">
-          <li>• <strong>아이디어:</strong> 호텔 창가 옆모습 / 공항 라운지 뒷모습 / 촬영 전 대기실에서 숨 고르는 순간</li>
-          <li>• <strong>포맷:</strong> 사진 또는 3~4초 무빙 컷</li>
-          <li>• <strong>브랜딩:</strong> 여백·침묵·자신감 (과잉 노출 시대의 차별점)</li>
-          <li>• <strong>활용처:</strong> 매거진 디지털 화보 / 브랜드 제안용 무드 레퍼런스</li>
-        </ul>
-      </div>
-
-      <!-- 5) The Detail -->
-      <div class="rounded-xl bg-white border border-gray-200 p-5">
-        <div class="flex items-start justify-between gap-3 mb-2">
-          <p class="font-extrabold">5) “The Detail” · 배우의 선택</p>
-          <span class="badge"><i class="fa-solid fa-magnifying-glass"></i> Detail</span>
-        </div>
-        <p class="text-sm muted mb-3">(Taste is in the Small Things)</p>
-
-        <p class="text-sm leading-relaxed mb-3">
-          <strong>컨셉:</strong> 얼굴·전신 대신 <strong>선택의 디테일</strong>만 보여주는 큐레이션 콘텐츠.
-        </p>
-
-        <ul class="space-y-2 text-sm leading-relaxed">
-          <li>• <strong>아이디어:</strong> 시계 버클 잠그는 손 / 코트 안감 질감 / 여행 가방 속 책 / 테이블 위 안경</li>
-          <li>• <strong>브랜딩:</strong> “뭘 입느냐”보다 “어떤 디테일을 고르느냐”가 중요해 보이게 설계</li>
-          <li>• <strong>실행:</strong> Feed 또는 브랜드 제안용 슬라이드</li>
-          <li>• <strong>캡션:</strong> 없음 또는 단어 1개 (<strong>Detail.</strong> / <strong>Choice.</strong>)</li>
-        </ul>
-      </div>
-
-      <!-- 6) Walking Sequence -->
-      <div class="rounded-xl bg-white border border-gray-200 p-5">
-        <div class="flex items-start justify-between gap-3 mb-2">
-          <p class="font-extrabold">6) “Walking Sequence” · 걷는 사람</p>
-          <span class="badge"><i class="fa-solid fa-person-walking"></i> Walk</span>
-        </div>
-        <p class="text-sm muted mb-3">(Movement without Performance)</p>
-
-        <p class="text-sm leading-relaxed mb-3">
-          <strong>컨셉:</strong> 포즈/연출 없이 <strong>‘걷는 장면’만으로</strong> 완성되는 브랜드 무드.
-        </p>
-
-        <ul class="space-y-2 text-sm leading-relaxed">
-          <li>• <strong>아이디어:</strong> 도시 골목 전신 워킹 / 비 오는 날 느린 보폭 / 어두운 거리 실루엣</li>
-          <li>• <strong>브랜딩:</strong> 피지컬이 자연스럽게 증명, 과장 없이도 “옷이 살아 움직이는 느낌” 전달</li>
-          <li>• <strong>브랜드 설득:</strong> <span class="muted">“연출하지 않아도 옷의 실루엣이 완성됩니다.”</span></li>
-        </ul>
-      </div>
-
-      <!-- 7) No Face, Full Presence -->
-      <div class="rounded-xl bg-white border border-gray-200 p-5">
-        <div class="flex items-start justify-between gap-3 mb-2">
-          <p class="font-extrabold">7) “No Face, Full Presence” · 얼굴 없는 화보</p>
-          <span class="badge"><i class="fa-solid fa-user-secret"></i> Teaser</span>
-        </div>
-        <p class="text-sm muted mb-3">(Presence without Exposure)</p>
-
-        <p class="text-sm leading-relaxed mb-3">
-          <strong>컨셉:</strong> 얼굴 노출 없이도 존재감을 남기는 고급 전략.
-          <strong>희소성</strong>을 유지한다.
-        </p>
-
-        <ul class="space-y-2 text-sm leading-relaxed">
-          <li>• <strong>아이디어:</strong> 뒤돌아 선 전신 / 어깨·목선·손 / 그림자·실루엣 중심</li>
-          <li>• <strong>브랜딩:</strong> 익명성·클래식함 → 글로벌 하이엔드가 선호하는 톤</li>
-          <li>• <strong>활용:</strong> 하이엔드 티저 이미지 / 매거진 “프리뷰 컷” 최적</li>
-        </ul>
+        <h1 class="text-base font-black uppercase tracking-tighter">Steve Noh 2026 Strategy</h1>
+        <p class="text-[11px] text-gray-400 font-bold tracking-[0.2em] uppercase">Global Branding & Viral Execution Masterplan</p>
       </div>
     </div>
-  </div>
-  <!-- ========================================================= -->
-    <!-- PAGE ADDITION : Channel Strategy (Docu / Action-based)     -->
-    <!-- ========================================================= -->
-
-    <section class="card">
-    <div class="section-title">
-        <h2 class="text-xl md:text-2xl font-extrabold">
-        12. 채널 공략 전략: 토크쇼보다 ‘체험형/다큐형’, 예능은 ‘행동형’으로
-        </h2>
-        <span class="badge">
-        <i class="fa-solid fa-clapperboard"></i> Channel Strategy
-        </span>
+    <div class="flex gap-4 items-center">
+      <span class="px-5 py-2.5 bg-amber-50 text-amber-700 text-[11px] font-black border border-amber-100 rounded-full">CONFIDENTIAL · EXECUTION</span>
+      <button class="px-7 py-3 bg-gray-900 text-white rounded-2xl text-xs font-bold hover:bg-black transition-all shadow-md" onclick="window.print()">PRINT TO PDF</button>
     </div>
+  </nav>
 
-    <p class="text-base leading-relaxed muted mb-6">
-        본 전략은 ‘말로 설명하는 콘텐츠’가 아니라 <strong>피지컬·분위기·행동</strong>으로
-        배우의 이미지를 각인시키는 방향을 전제로 한다.<br>
-        공통 원칙: <strong>토크 최소 · 화면으로 증명 · 서사(경험)로 설득</strong>.
-    </p>
-
-    <!-- Quick Rules -->
-    <div class="rounded-xl border border-gray-200 p-6 bg-gray-50 mb-6">
-        <h3 class="text-lg font-extrabold mb-4">운영 원칙 (3줄 버전)</h3>
-        <ul class="space-y-2 text-sm leading-relaxed">
-        <li>• <strong>말보다 장면</strong>: 말재주 대신 ‘결’이 보이는 화면을 남긴다.</li>
-        <li>• <strong>토크는 짧게</strong>: 긴 멘트 대신 한 문장, 한 단어로 정리한다.</li>
-        <li>• <strong>출연은 포맷 선택</strong>: 스튜디오 토크보다 체험·관찰·다큐형이 우선.</li>
-        </ul>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <!-- 1) Docu / Experience Channels -->
-        <div class="rounded-xl border border-gray-200 p-6 bg-gray-50">
-        <div class="flex items-start justify-between gap-4 mb-3">
-            <div>
-            <h3 class="text-lg font-extrabold">1) 토크쇼 대신 ‘체험형/다큐형’ 채널 공략</h3>
-            <p class="muted text-sm mt-1">
-                살롱드립 같은 토크 중심 채널보다, 배우의 <strong>피지컬·분위기</strong>를 시각적으로 담아낼 수 있는 포맷 우선
-            </p>
-            </div>
-            <span class="badge"><i class="fa-solid fa-video"></i> Docu-first</span>
+  <main class="slide-container">
+    <aside class="nav-panel">
+      <div class="flex flex-col gap-3" id="nav-list"></div>
+    </aside>
+    
+    <section class="stage">
+      <div id="stage-content" class="p-16 flex-1 overflow-y-auto"></div>
+      <footer class="h-24 border-t bg-gray-50/50 flex items-center justify-between px-16">
+        <div class="text-[11px] text-gray-400 font-black uppercase tracking-[0.3em]" id="slide-index"></div>
+        <div class="flex gap-5">
+          <button class="w-14 h-14 border border-gray-200 rounded-2xl hover:bg-white flex items-center justify-center transition-all hover:shadow-sm" id="prev-btn"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="px-10 py-4 bg-gray-900 text-white rounded-2xl text-xs font-bold hover:shadow-2xl transition-all" id="next-btn">NEXT STRATEGY</button>
         </div>
+      </footer>
+    </section>
+  </main>
 
-        <div class="space-y-4">
-            <div class="rounded-xl bg-white border border-gray-200 p-5">
-            <p class="font-extrabold mb-2">[딩고 뮤직/킬링보이스] 비주얼 연출형 출연</p>
-            <p class="text-sm leading-relaxed">
-                <strong>방식:</strong> 직접 노래를 부르지 않더라도, 글로벌 하이엔드 룩으로
-                음악을 듣거나 특정 아티스트의 영상을 소개하는 <strong>‘큐레이터’</strong> 역할로 출연.
-            </p>
-            <p class="text-sm muted mt-2 leading-relaxed">
-                <strong>효과:</strong> 말이 아닌 <strong>영상미·무드</strong>로 배우 이미지를 각인.
-            </p>
-            </div>
+  <script>
+    const slides = [
+    {
+      id: 1, 
+      title: "2026 Integrated Strategic Roadmap", 
+      subtitle: "방영 모멘텀 활용 및 개인 채널 런칭을 위한 연간 통합 실행 계획", 
+      kicker: "Master Timeline",
+      render() { return `
+        <div class="grid grid-cols-12 gap-8 animate-in text-slate-900">
+          
+          <div class="col-span-8 space-y-6">
+            
+            <div class="grid grid-cols-2 gap-6">
+              <div class="p-8 border-2 border-indigo-100 rounded-[32px] bg-indigo-50/50 shadow-sm relative overflow-hidden h-full">
+                <div class="absolute top-0 right-0 p-4 opacity-10 text-5xl font-black italic text-indigo-900">01</div>
+                <div class="flex justify-between items-center mb-6 border-b border-indigo-100 pb-4">
+                  <span class="px-4 py-1.5 bg-indigo-600 text-white text-[10px] font-black rounded-lg uppercase tracking-widest shadow-md">Stage 01</span>
+                  <span class="text-[11px] font-black text-indigo-500">JAN - MAY</span>
+                </div>
+                <h4 class="font-black text-xl mb-6 text-slate-900 italic underline decoration-indigo-200 underline-offset-8">방영 전 홍보 집중</h4>
+                <ul class="text-[14px] space-y-4 text-slate-700 font-medium">
+                  <li class="bullet-item"><b>메인 홍보:</b> '대군부인' 타겟 언론 인터뷰 및 방송 출연</li>
+                  <li class="bullet-item"><b>디지털 협업:</b> 대형 웹예능 연계로 대중 인지도 선점</li>
+                  <li class="bullet-item"><b>바이럴 세팅:</b> 커뮤니티/블로그 초기 화제성 조성 SOP</li>
+                </ul>
+              </div>
 
-            <div class="rounded-xl bg-white border border-gray-200 p-5">
-            <p class="font-extrabold mb-2">[GQ / Vogue] ‘왓츠인마이백(My Essentials)’</p>
-            <p class="text-sm leading-relaxed">
-                <strong>방식:</strong> 긴 토크 대신 실제 사용하는 <strong>고기능성 아웃도어 장비</strong>와
-                <strong>애착 하이엔드 아이템</strong>을 하나씩 꺼내 보여주기.
-            </p>
-            <p class="text-sm muted mt-2 leading-relaxed">
-                <strong>효과:</strong> 아이템에 대한 짧고 담백한 설명만으로도 <strong>전문적·지적인 인상</strong> 강화.
-            </p>
-            </div>
-        </div>
-        </div>
-
-        <!-- 2) Action-based Variety -->
-        <div class="rounded-xl border border-gray-200 p-6 bg-gray-50">
-        <div class="flex items-start justify-between gap-4 mb-3">
-            <div>
-            <h3 class="text-lg font-extrabold">2) 예능 출연 시 ‘행동형’ 예능 선택</h3>
-            <p class="muted text-sm mt-1">
-                말을 많이 해야 하는 스튜디오형 예능은 지양. <strong>루틴·행동·관찰</strong> 중심 포맷을 우선한다.
-            </p>
-            </div>
-            <span class="badge"><i class="fa-solid fa-person-walking"></i> Action-based</span>
-        </div>
-
-        <div class="space-y-4">
-            <div class="rounded-xl bg-white border border-gray-200 p-5">
-            <p class="font-extrabold mb-2">[관찰 예능] ‘나 혼자 산다’ 류</p>
-            <p class="text-sm leading-relaxed">
-                <strong>방식:</strong> 억지로 웃기지 않고, 아침 러닝·독서·자기관리 루틴을 그대로 보여주는 구성.
-            </p>
-            <p class="text-sm muted mt-2 leading-relaxed">
-                <strong>포지셔닝:</strong> “말수가 적지만 자기관리에 철저한 사람” 캐릭터로 자연스럽게 고정.
-            </p>
+              <div class="p-8 border-2 border-rose-100 rounded-[32px] bg-rose-50/50 shadow-sm relative overflow-hidden h-full">
+                <div class="absolute top-0 right-0 p-4 opacity-10 text-5xl font-black italic text-rose-900">02</div>
+                <div class="flex justify-between items-center mb-6 border-b border-rose-100 pb-4">
+                  <span class="px-4 py-1.5 bg-rose-600 text-white text-[10px] font-black rounded-lg uppercase tracking-widest shadow-md">Stage 02</span>
+                  <span class="text-[11px] font-black text-rose-400">JUN - AUG</span>
+                </div>
+                <h4 class="font-black text-xl mb-6 text-slate-900 italic underline decoration-rose-200 underline-offset-8">실행 및 전방위 확산</h4>
+                <ul class="text-[14px] space-y-4 text-slate-700 font-medium">
+                  <li class="bullet-item"><b>팬미팅 투어:</b> 국내외 투어 개시 및 현장 모멘텀 확보</li>
+                  <li class="bullet-item"><b>전방위 바이럴:</b> 숏폼/블로그/커뮤니티 전방위 침투</li>
+                  <li class="bullet-item"><b>이슈 대응:</b> 실시간 방영 화제성 기반 가공물 배포</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="rounded-xl bg-white border border-gray-200 p-5">
-            <p class="font-extrabold mb-2">[심층 인터뷰] ‘유퀴즈’ 류</p>
-            <p class="text-sm leading-relaxed">
-                <strong>방식:</strong> 가벼운 농담보다, 전공/커리어/글로벌 작품 과정 등 <strong>진지한 서사</strong> 중심으로 전개.
-            </p>
-            <p class="text-sm muted mt-2 leading-relaxed">
-                <strong>효과:</strong> 말수가 적은 점이 오히려 <strong>진중하고 깊이 있는 배우</strong> 브랜딩에 기여.
-            </p>
+            <div class="p-8 border-2 border-slate-200 rounded-[40px] bg-white shadow-xl border-t-8 border-t-slate-800">
+              <div class="flex justify-between items-center mb-8 border-b pb-4 border-slate-100">
+                <div class="flex items-center gap-3">
+                  <span class="px-4 py-1.5 bg-slate-900 text-white text-[10px] font-black rounded-lg uppercase tracking-widest shadow-md">Stage 03</span>
+                  <h4 class="font-black text-xl text-slate-900 uppercase tracking-tighter italic">콘텐츠 DB화 및 브릿지 마케팅</h4>
+                </div>
+                <span class="text-[11px] font-black text-slate-400 uppercase tracking-widest">SEP - OCT</span>
+              </div>
+              <div class="grid grid-cols-2 gap-10">
+                <div class="p-6 bg-slate-50 rounded-[24px] border border-slate-100">
+                  <h5 class="text-[13px] font-black mb-4 italic text-indigo-600 underline decoration-indigo-200 underline-offset-4">Content Asset DB</h5>
+                  <ul class="text-[13px] space-y-3 text-slate-700 font-medium leading-relaxed">
+                    <li>• <b class="text-slate-900">비하인드 숏폼 DB화:</b> 현장 소스 분류/아카이빙</li>
+                    <li>• <b class="text-slate-900">공백기 콘텐츠 오픈:</b> 준비 소스 전략적 배포</li>
+                    <li>• <b class="text-slate-900">브랜드 자산화:</b> 앰배서더 FW 시즌 캠페인 노출</li>
+                  </ul>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-[24px] border border-slate-100">
+                  <h5 class="text-[13px] font-black mb-4 italic text-indigo-600 underline decoration-indigo-200 underline-offset-4">Bridge Strategy</h5>
+                  <ul class="text-[13px] space-y-3 text-slate-700 font-medium leading-relaxed">
+                    <li>• <b class="text-slate-900">커뮤니티 유지:</b> DB 소스 활용 지속 언급량 관리</li>
+                    <li>• <b class="text-slate-900">넥스트 빌드업:</b> 연말 시상식 및 차기작 무드 조성</li>
+                    <li>• <b class="text-slate-900">팬덤 결집:</b> 미공개 비주얼 순차 오픈</li>
+                  </ul>
+                </div>
+              </div>
             </div>
+
+            <div class="p-8 bg-slate-900 rounded-[40px] shadow-2xl relative overflow-hidden border-2 border-gold/50">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+              
+              <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-4 relative z-10">
+                <div class="flex items-center gap-3">
+                  <span class="px-4 py-1.5 bg-gold text-black text-[10px] font-black rounded-lg uppercase tracking-widest shadow-lg">Stage 04</span>
+                  <h4 class="font-black text-xl text-white uppercase tracking-tighter italic">연말 시상식 및 차기작 피날레</h4>
+                </div>
+                <span class="text-[11px] font-black text-slate-500 uppercase tracking-widest">NOV - DEC</span>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-10 relative z-10">
+                <div class="space-y-4">
+                  <h4 class="text-gold font-black text-lg italic"><i class="fa-solid fa-trophy mr-2"></i> 시상식 피날레</h4>
+                  <p class="text-[14px] text-white leading-relaxed font-medium italic underline decoration-gold/40 underline-offset-8">
+                    수트 브랜딩 전략 강화, 글로벌 수상 소감 서사 완성, <br>
+                    현재 방영 중인 영상 바이럴 극대화를 통한 화력 집중
+                  </p>
+                </div>
+                <div class="space-y-4 border-l border-white/10 pl-10">
+                  <h4 class="text-gold font-black text-lg italic"><i class="fa-solid fa-clapperboard mr-2"></i> 차기작 릴레이 홍보</h4>
+                  <p class="text-[14px] text-white leading-relaxed font-medium italic underline decoration-gold/40 underline-offset-8">
+                    방영 예정작 매체 인터뷰 및 각종 홍보 순회, <br>
+                    공백기 축적 비하인드 최종 릴리즈(DB 오픈)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-4 space-y-6">
+            <div class="p-8 bg-white border-2 border-slate-200 rounded-[48px] shadow-2xl h-full flex flex-col border-t-8 border-t-indigo-600">
+              <div class="flex items-center gap-4 mb-10 border-b pb-6 border-slate-100">
+                <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center shadow-inner">
+                  <i class="fab fa-youtube text-red-600 text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-black text-base tracking-tighter text-slate-900">YouTube Operation</h4>
+                  <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Parallel Strategy</p>
+                </div>
+              </div>
+              
+              <div class="space-y-2 flex-1">
+                <div class="flex items-center gap-5 p-5 rounded-2xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100 group">
+                  <span class="text-xs font-black text-slate-300 group-hover:text-indigo-600 transition-colors">01</span>
+                  <div>
+                    <p class="text-[15px] font-black text-slate-800 italic uppercase">기획</p>
+                    <p class="text-[11px] text-slate-500 font-bold">Archive / Flâneur 컨셉 확정</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-5 p-5 rounded-2xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100 group">
+                  <span class="text-xs font-black text-slate-300 group-hover:text-indigo-600 transition-colors">02</span>
+                  <div>
+                    <p class="text-[15px] font-black text-slate-800 italic uppercase">소재 발굴</p>
+                    <p class="text-[11px] text-slate-500 font-bold">현장 / 사적 취향 소스 확보</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-5 p-5 rounded-2xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100 group">
+                  <span class="text-xs font-black text-slate-300 group-hover:text-indigo-600 transition-colors">03</span>
+                  <div>
+                    <p class="text-[15px] font-black text-slate-800 italic uppercase">촬영</p>
+                    <p class="text-[11px] text-slate-500 font-bold">시네마틱 룩 기반 정기 촬영</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-5 p-5 rounded-2xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100 group">
+                  <span class="text-xs font-black text-slate-300 group-hover:text-indigo-600 transition-colors">04</span>
+                  <div>
+                    <p class="text-[15px] font-black text-slate-800 italic uppercase">편집/운영</p>
+                    <p class="text-[11px] text-slate-500 font-bold">하반기 런칭 및 숏폼 연계</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-10 p-6 bg-slate-900 rounded-[32px] text-center shadow-lg border-2 border-gold/20">
+                <p class="text-[13px] text-gold leading-relaxed font-black italic tracking-tight">
+                  "본업의 화제성과 <br>
+                  <span class="text-white opacity-90">개인 채널 운영으로 시너지 극대화</span>"
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>`; }
+    },
+      {
+        id: 2, title: "통합 바이럴별 장단점 분석", subtitle: "Viral Strategy: 노상현 바이럴 마케팅을 단기에 극대화 할 수 있는 도구", kicker: "Phase 02",
+        render() { return `
+          <div class="space-y-10 animate-in">
+            <div class="p-8 bg-indigo-50 border border-indigo-100 rounded-[32px]">
+               <p class="text-lg text-indigo-900 font-medium leading-relaxed italic text-center">전제: 바이럴은 단기 확산용 도구이지 배우 브랜딩의 전부가 아님. <br>언제, 어디에, 어떤 강도로 쓸 것인가의 문제.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-10">
+              <div class="p-10 border border-emerald-100 rounded-[40px] bg-emerald-50/30">
+                <h4 class="font-black text-emerald-800 text-base mb-8 underline underline-offset-8">1) 전문 업체 활용의 장점</h4>
+                <ul class="text-sm space-y-5">
+                  <li class="bullet-item"><b>신속한 시장 반응:</b> 초기 노출 및 사용자 반응 생성 속도 우수</li>
+                  <li class="bullet-item"><b>효율적 확산 구조:</b> 커뮤니티·SNS 최적화 포맷으로 실패 확률 감소</li>
+                  <li class="bullet-item"><b>멀티 채널 커버리지:</b> 카페, 커뮤니티, 블로그 등 동시 확산</li>
+                  <li class="bullet-item"><b>리스크 관리 용이:</b> 부정 반응 모니터링 및 삭제 대응 신속</li>
+                  <li class="bullet-item"><b>검색 기반 자산 구축:</b> 단기 이슈를 검색 결과 자산으로 전환</li>
+                </ul>
+              </div>
+              <div class="p-10 border border-rose-100 rounded-[40px] bg-rose-50/30">
+                <h4 class="font-black text-rose-800 text-base mb-8 underline underline-offset-8">2) 업체 활용 시 유의점 (단점)</h4>
+                <ul class="text-sm space-y-5">
+                  <li class="bullet-item"><b>이미지 리스크:</b> 비전문 업체 활용 시 배우 이미지 역효과</li>
+                  <li class="bullet-item"><b>퀄리티 편차:</b> 업체별 역량 차이로 인한 완성도 불균형 위험</li>
+                  <li class="bullet-item"><b>브랜딩 효과 한계:</b> 지속적 팬덤 및 깊은 브랜딩에는 제한적</li>
+                  <li class="bullet-item"><b>비용 효율 불균형:</b> 투입 예산 대비 성과가 항상 일정치 않음</li>
+                  <li class="bullet-item"><b>신뢰도 하락:</b> 인위적 홍보 인식 발생 시 브랜드 신뢰도 하락</li>
+                </ul>
+              </div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 3, title: "실행 콘텐츠 라인업", subtitle: "포맷에 따른 콘텐츠 라인업", kicker: "Phase 03",
+        render() { return `
+          <div class="grid grid-cols-12 gap-12 animate-in">
+            <div class="col-span-6 v-card p-12 border rounded-[48px] bg-white space-y-10 flex flex-col justify-center shadow-sm">
+              <h4 class="font-black text-xs uppercase text-gray-400 tracking-[0.3em]">Execution Line-up</h4>
+              <ul class="text-[16px] space-y-8">
+                <li class="bullet-item"><b>토픽 중심 콘텐츠:</b> 출연 드라마·영화·화보 등 주요 이슈 기반</li>
+                <li class="bullet-item"><b>채널 맞춤형 가공:</b> 카페·커뮤니티·블로그 성격에 맞춘 버전 분리 제작</li>
+                <li class="bullet-item"><b>스토리 기반 리뷰형:</b> 예) “이 배우 인터뷰 보고 생각 많아짐”</li>
+                <li class="bullet-item"><b>제보 형식 콘텐츠:</b> 예) “이 인터뷰 봤는데 신선하더라~”</li>
+                <li class="bullet-item"><b>논쟁·대화 유도형:</b> 예) “이 배우 요즘 왜 이렇게 자주 나옴?”</li>
+              </ul>
+            </div>
+            <div class="col-span-6">
+               <div class="img-slot h-full min-h-[600px] shadow-2xl">
+                  <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200">
+                  <div class="absolute bg-white/95 p-6 bottom-10 right-10 rounded-[24px] text-xs text-black font-bold border shadow-2xl">
+                    콘텐츠 배포 예시: 카페, 커뮤니티 침투 사례 레퍼런스
+                  </div>
+               </div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 4, title: "디지털 매거진 제휴 전략", subtitle: "신뢰도 · 검색 · 브랜딩 자산을 남기는 구조", kicker: "Phase 04",
+        render() { return `
+          <div class="space-y-10 animate-in">
+            <div class="grid grid-cols-12 gap-10">
+              <div class="col-span-5 v-card p-10 border rounded-[40px] bg-slate-50 flex flex-col justify-center">
+                <h4 class="font-black text-xs mb-8 text-indigo-600 uppercase underline decoration-2 underline-offset-8">1) 주요 제휴 타깃 매체</h4>
+                <div class="grid grid-cols-2 gap-y-6 gap-x-4 text-sm font-bold">
+                  <div class="flex items-center gap-3"> 아이즈매거진</div>
+                  <div class="flex items-center gap-3"> 데일리패션뉴스</div>
+                  <div class="flex items-center gap-3"> 패스트페이퍼</div>
+                  <div class="flex items-center gap-3"> WWD KOREA</div>
+                  <div class="flex items-center gap-3"> HIGHSNOBIETY</div>
+                  <div class="flex items-center gap-3"> HIGHCUT</div>
+                </div>
+              </div>
+              <div class="col-span-7 img-slot h-[400px] shadow-xl">
+                <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=1600">
+                <div class="absolute bg-black/80 text-white p-5 rounded-2xl text-[11px] font-bold bottom-6 left-6">
+                  VISUAL REF: 매거진 인스타그램 카드형 콘텐츠 예시
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-12 gap-10">
+               <div class="col-span-7 p-10 border rounded-[40px] bg-white shadow-sm">
+                 <h4 class="font-black text-xs mb-6 text-indigo-600 uppercase underline decoration-2 underline-offset-8">2) 콘텐츠 라인업 & 목표</h4>
+                 <ul class="text-[15px] space-y-4 text-gray-600">
+                   <li>• <b>작품 현장/비하인드 컷:</b> 독점 제공 시 포털 검색 유입 강력 증대</li>
+                   <li>• <b>라이프스타일 컷:</b> 패션·일상·무드 중심, 브랜드 친화적 이미지 구축</li>
+                   <li>• <b>제휴 목표:</b> 신뢰도 상승 및 매거진-SNS 간 글로벌 교차 유입 시너지</li>
+                 </ul>
+               </div>
+               <div class="col-span-5 accent-card flex flex-col justify-center gap-6">
+                 <h4 class="text-gold font-black italic text-lg">3) 디지털 매거진 바이럴 효과</h4>
+                 <div class="grid grid-cols-1 gap-4 text-sm text-gray-300">
+                   <p>• 배우 이미지의 다각화 (작품·패션·라이프)</p>
+                   <p>• 구글 검색 결과 선점 및 브랜딩 자산화</p>
+                   <p>• 팬 외 일반 대중까지 글로벌 확장 노출</p>
+                   <p>• 트렌디/신뢰도 이미지 동시 구축</p>
+                 </div>
+               </div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 5, title: "유튜브 쇼츠 · 틱톡 운영 전략", subtitle: "인지도 확장 → 팔로워 성장 → 팬덤 유입", kicker: "Phase 05",
+        render() { return `
+          <div class="grid grid-cols-12 gap-12 animate-in">
+            <div class="col-span-6 space-y-8">
+              <div class="grid grid-cols-2 gap-6">
+                <div class="img-slot h-72 border-indigo-200 shadow-lg"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800"><div class="absolute bottom-3 text-[10px] bg-black/60 px-3 py-1 rounded text-white font-bold">YouTube Shorts</div></div>
+                <div class="img-slot h-72 border-rose-200 shadow-lg"><img src="https://images.unsplash.com/photo-1596558450255-7c0b7be9d56a?auto=format&fit=crop&w=800"><div class="absolute bottom-3 text-[10px] bg-black/60 px-3 py-1 rounded text-white font-bold">TikTok Feed</div></div>
+              </div>
+              <div class="v-card p-10 border rounded-[40px] bg-white shadow-sm space-y-6">
+                <h4 class="font-black text-xs uppercase text-gray-400 tracking-widest">Account Direction</h4>
+                <ul class="text-[15px] space-y-4 text-gray-600">
+                  <li class="bullet-item">‘설명형’보다 <b>시각적 설득</b> 중심 (장면·표정·무드)</li>
+                  <li class="bullet-item">채널 누적이 곧 자산: <b>짧게 자주</b> 업로드로 밀도 확보</li>
+                  <li class="bullet-item">훅(0-2s) → 핵심(3-10s) → 잔상(1s) 최적화 포맷</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-span-6 v-card p-12 border rounded-[56px] bg-slate-900 text-white flex flex-col justify-center gap-10">
+              <div><h4 class="text-gold font-black italic text-xl mb-6">계정 운영 목표</h4><p class="text-[17px] font-light leading-relaxed">글로벌 인지도 확장 · 구독/팔로 성장 · 화제성 조회수 극대화</p></div>
+              <hr class="opacity-10">
+              <div><h4 class="text-gold font-black italic text-xl mb-6">집행 전략 (Ops)</h4><p class="text-[17px] font-light leading-relaxed">주 3~5개 정기 업로드 유지<br>이슈 구간(드라마 방영 등) 발생 시 빈도보다 타이밍 우선 편성</p></div>
+              <div class="p-6 border border-white/10 rounded-3xl bg-white/5 text-[12px] text-gray-400 italic font-medium leading-relaxed">쇼츠는 검색과 추천 알고리즘이 동시에 작동하므로, 초기 확산 후 브랜드 자산 축적 속도가 매우 빠름</div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 6, title: "디지털 채널 MOU & Exclusive 전략", subtitle: "Scarcity: 팬덤 흡수를 위한 독점 파트너십", kicker: "Phase 06",
+        render() { return `
+          <div class="grid grid-cols-12 gap-12 animate-in">
+            <div class="col-span-6 space-y-8 flex flex-col justify-center">
+              <div class="p-10 border-l-8 border-indigo-500 bg-white rounded-r-[40px] shadow-sm">
+                <h4 class="font-black text-sm mb-4 uppercase text-indigo-600 italic tracking-tighter">전략적 타겟 채널</h4>
+                <p class="text-[17px] text-gray-600 leading-relaxed italic underline decoration-slate-200 underline-offset-8">딩고, 고어헤드, 보그 등 <b class="text-black font-black">“영상미 + 편집력”</b>이 보증된 대형 매체 중심</p>
+              </div>
+              <div class="p-10 border-l-8 border-indigo-500 bg-white rounded-r-[40px] shadow-sm">
+                <h4 class="font-black text-sm mb-4 uppercase text-indigo-600 italic tracking-tighter">글로벌 인터뷰 콘텐츠</h4>
+                <p class="text-[17px] text-gray-600 leading-relaxed italic underline decoration-slate-200 underline-offset-8"><b>올-잉글리시</b> 콘텐츠 및 영문 자막 노출로 글로벌 타깃 포지셔닝 선명화</p>
+              </div>
+              <div class="p-10 border-l-8 border-indigo-500 bg-white rounded-r-[40px] shadow-sm">
+                <h4 class="font-black text-sm mb-4 uppercase text-indigo-600 italic tracking-tighter">비하인드 다큐멘터리</h4>
+                <p class="text-[17px] text-gray-600 leading-relaxed italic underline decoration-slate-200 underline-offset-8">준비 현장의 리얼한 서사를 통해 <b class="text-black font-black">‘인간 노상현’</b>에 대한 깊은 입덕 포인트 형성</p>
+              </div>
+            </div>
+            <div class="col-span-6 img-slot h-full min-h-[600px] shadow-2xl">
+               <img src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=1200">
+               <div class="absolute bottom-12 left-12 bg-black/80 backdrop-blur-xl p-8 rounded-[32px] text-white border border-white/10 shadow-2xl max-w-sm">
+                  <h4 class="text-gold font-black italic tracking-widest uppercase mb-4">Visual Concept</h4>
+                  <p class="text-sm font-medium leading-relaxed italic opacity-80">하이엔드 룩북과 심층 인터뷰가 결합된 무드보드. (인터뷰 스틸컷 중심)</p>
+               </div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 7, title: "채널별 바이럴 침투 방안", subtitle: "MZ Penetration: 숏폼과 커뮤니티의 유기적 결합", kicker: "Phase 07",
+        render() { return `
+          <div class="grid grid-cols-2 gap-10 animate-in">
+            <div class="v-card border p-12 rounded-[56px] bg-white flex flex-col justify-between shadow-sm">
+              <div class="space-y-8">
+                <h4 class="font-black text-lg mb-8 underline decoration-indigo-500 decoration-4 underline-offset-[12px] italic">Short-form (Reels/Shorts)</h4>
+                <div class="space-y-10">
+                  <div class="p-6 bg-slate-50 rounded-3xl"><span class="px-4 py-1.5 bg-indigo-600 text-white rounded-full text-[11px] font-black mb-4 inline-block">① 반전 매력 확산</span><p class="text-[15px] text-gray-600 leading-relaxed font-medium">‘대군부인’ 속 냉철한 이미지 vs 팬미팅 현장의 다정함 대비 편집</p></div>
+                  <div class="p-6 bg-slate-50 rounded-3xl"><span class="px-4 py-1.5 bg-indigo-600 text-white rounded-full text-[11px] font-black mb-4 inline-block">② 피지컬/룩 강조</span><p class="text-[15px] text-gray-600 leading-relaxed font-medium">181cm 모델 비율 기반 ‘아웃도어 룩북’ 및 스포츠 챌린지 영상</p></div>
+                </div>
+              </div>
+              <div class="img-slot h-48 mt-12 border-none shadow-xl"><img src="https://images.unsplash.com/photo-1512436030959-528258384281?auto=format&fit=crop&w=800"><div class="absolute text-[11px] font-black text-white uppercase bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">Ref: 3s Hooking Cut</div></div>
+            </div>
+            <div class="v-card border p-12 rounded-[56px] bg-white flex flex-col justify-between shadow-sm">
+              <div class="space-y-8">
+                <h4 class="font-black text-lg mb-8 underline decoration-rose-500 decoration-4 underline-offset-[12px] italic">Community & SNS</h4>
+                <div class="space-y-10">
+                  <div class="p-6 bg-slate-50 rounded-3xl"><span class="px-4 py-1.5 bg-rose-600 text-white rounded-full text-[11px] font-black mb-4 inline-block">① 고화질 직찍 바이럴</span><p class="text-[15px] text-gray-600 leading-relaxed font-medium">X(트위터), 인스티즈 등 핵심 커뮤니티 내 실물 체감 컷 및 미담 확산</p></div>
+                  <div class="p-6 bg-slate-50 rounded-3xl"><span class="px-4 py-1.5 bg-rose-600 text-white rounded-full text-[11px] font-black mb-4 inline-block">② 글로벌 서사 확장</span><p class="text-[15px] text-gray-600 leading-relaxed font-medium">해외 K-드라마 팬덤 커뮤니티에 차세대 스타 성장 서사 연결</p></div>
+                </div>
+              </div>
+              <div class="img-slot h-48 mt-12 border-none shadow-xl"><img src="https://images.unsplash.com/photo-1557167668-6ebe926273f0?auto=format&fit=crop&w=800"><div class="absolute text-[11px] font-black text-white uppercase bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">Ref: Community High-Res</div></div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 8, title: "팬미팅 투어 연계 마케팅", subtitle: "Tour Link: 브랜드 자산 가치와 배우 포지셔닝 강화", kicker: "Phase 08",
+        render() { return `
+          <div class="grid grid-cols-12 gap-12 animate-in">
+            <div class="col-span-5 space-y-10 flex flex-col justify-center">
+              <div class="accent-card border-l-[12px] border-gold">
+                <h4 class="text-gold font-black text-xs mb-6 uppercase tracking-[0.3em]">Brand Ambassador</h4>
+                <p class="text-2xl font-light leading-relaxed italic">"아웃도어 / 하이엔드 <br><b class="text-white">착장 고정 노출</b>"</p>
+                <p class="text-[14px] text-gray-400 mt-6 leading-relaxed">투어 기간 협업 브랜드 착장을 공식 콘텐츠 및 일상 SNS에 자연스럽게 배치하여 브랜드 자산 가치를 공고화.</p>
+              </div>
+              <div class="accent-card border-l-[12px] border-white">
+                <h4 class="text-white font-black text-xs mb-6 uppercase tracking-[0.3em]">Participation Event</h4>
+                <p class="text-2xl font-light leading-relaxed italic">"팬 참여형 <br><b class="text-white">SNS 챌린지 설계</b>"</p>
+                <p class="text-[14px] text-gray-400 mt-6 leading-relaxed">현장 참여 미션형 이벤트를 통해 팬들의 자발적 UGC 생산을 유도, 바이럴 속도와 도달 범위 확장.</p>
+              </div>
+            </div>
+            <div class="col-span-7 img-slot h-full min-h-[650px] shadow-2xl relative overflow-hidden">
+               <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600">
+               <div class="absolute inset-0 bg-black/20"></div>
+               <div class="absolute bg-white/95 text-black font-black text-4xl italic p-16 uppercase tracking-tighter mix-blend-screen text-center">
+                 Tour Poster / Key Visual <br>
+                 <span class="text-lg tracking-widest font-bold mt-4 block opacity-60">(Schedule & City List)</span>
+               </div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 9, title: "디지털 미디어별 타겟팅 실행 유닛", subtitle: "매체 특성에 맞춘 독점 프로젝트 기획안", kicker: "Phase 09",
+        render() { return `
+          <div class="grid grid-cols-2 gap-8 animate-in">
+            <div class="p-10 border border-slate-100 rounded-[48px] bg-white hover:border-black transition-all group shadow-sm">
+               <div class="flex items-center gap-4 mb-10">
+                 <span class="px-6 py-2 bg-black text-white rounded-xl text-[11px] font-black">DFN</span>
+                 <span class="text-xs text-gray-400 font-bold uppercase tracking-widest">Industry Focus</span>
+               </div>
+               <h4 class="text-2xl font-black italic mb-6 group-hover:text-indigo-600 transition-colors">앰배서더 룩북 & 비하인드</h4>
+               <ul class="text-[15px] space-y-4 text-gray-500 font-medium italic">
+                 <li>• <b>[룩북]</b> 투어 중 착용한 브랜드 정보 단독 큐레이션</li>
+                 <li>• <b>[시상식]</b> 레드카펫 직전 ‘남신 피지컬’ 화제성 선점</li>
+               </ul>
+            </div>
+            <div class="p-10 border border-slate-100 rounded-[48px] bg-white hover:border-rose-500 transition-all group shadow-sm">
+               <div class="flex items-center gap-4 mb-10">
+                 <span class="px-6 py-2 bg-rose-600 text-white rounded-xl text-[11px] font-black">EYESMAG</span>
+                 <span class="text-xs text-gray-400 font-bold uppercase tracking-widest">Lifestyle Mood</span>
+               </div>
+               <h4 class="text-2xl font-black italic mb-6 group-hover:text-rose-600 transition-colors">8-Items & On the Road</h4>
+               <ul class="text-[15px] space-y-4 text-gray-500 font-medium italic">
+                 <li>• <b>[영상]</b> 투어 필수 아웃도어 아이템 8가지 독점 인터뷰</li>
+                 <li>• <b>[브이로그]</b> 도시별 로컬 아웃도어 스팟 감성 협업</li>
+               </ul>
+            </div>
+            <div class="p-10 border border-slate-100 rounded-[48px] bg-white hover:border-emerald-600 transition-all group shadow-sm">
+               <div class="flex items-center gap-4 mb-10">
+                 <span class="px-6 py-2 bg-emerald-700 text-white rounded-xl text-[11px] font-black">ONCURATION</span>
+                 <span class="text-xs text-gray-400 font-bold uppercase tracking-widest">Archive</span>
+               </div>
+               <h4 class="text-2xl font-black italic mb-6 group-hover:text-emerald-700 transition-colors">브랜드 아카이브 & OOTD</h4>
+               <ul class="text-[15px] space-y-4 text-gray-500 font-medium italic">
+                 <li>• <b>[기사]</b> 브랜드 역사와 배우 이미지를 연결하는 심층 기획</li>
+                 <li>• <b>[자료]</b> 커뮤니티 확산용 ‘고프코어 스타일링의 정석’ 배포</li>
+               </ul>
+            </div>
+            <div class="p-10 border border-slate-100 rounded-[48px] bg-white hover:border-indigo-600 transition-all group shadow-sm">
+               <div class="flex items-center gap-4 mb-10">
+                 <span class="px-6 py-2 bg-indigo-900 text-white rounded-xl text-[11px] font-black">HYPEBEAST</span>
+                 <span class="text-xs text-gray-400 font-bold uppercase tracking-widest">Global Premium</span>
+               </div>
+               <h4 class="text-2xl font-black italic mb-6 group-hover:text-indigo-900 transition-colors">글로벌 릴리즈 & Exclusive</h4>
+               <ul class="text-[15px] space-y-4 text-gray-500 font-medium italic">
+                 <li>• <b>[글로벌]</b> 한/영 동시 발행으로 해외 트렌드 세터 공략</li>
+                 <li>• <b>[포토]</b> 오피셜 계정 한정 고감도 패션 사진 릴리즈</li>
+               </ul>
+            </div>
+          </div>
+          <div class="mt-12 p-8 bg-amber-50 border border-amber-100 rounded-[32px] flex items-center gap-6 shadow-sm">
+            <i class="fa-solid fa-lightbulb text-amber-500 text-3xl"></i>
+            <p class="text-[15px] text-amber-800 font-bold">협업 Tip: 태깅과 초반 댓글 세팅을 통해 미디어 알고리즘 인기 게시물을 선점하는 것이 핵심입니다.</p>
+          </div>`; }
+      },
+      {
+        id: 10, title: "전략적 MOU 제안 채널 리스트", subtitle: "Partnership: 지적 이미지와 하이엔드 포지셔닝 극대화", kicker: "Phase 10",
+        render() { return `
+          <div class="v-card p-10 border rounded-[48px] bg-white animate-in shadow-sm">
+            <table class="w-full">
+              <thead>
+                <tr class="text-slate-400 text-xs font-black uppercase tracking-widest"><th class="pb-6">유형</th><th class="pb-6">추천 채널</th><th class="pb-6">독점 콘텐츠 제안</th><th class="pb-6">포지셔닝 포인트</th></tr>
+              </thead>
+              <tbody class="text-[15px]">
+                <tr><td class="font-black py-8">패션/라이프</td><td class="text-indigo-600 font-bold">GQ KOREA</td><td class="italic font-medium text-slate-500">〈노상현의 에센셜 10〉<br>하이엔드 아이템 큐레이션</td><td class="font-bold">글로벌 하이엔드</td></tr>
+                <tr><td class="font-black py-8">음악/감성</td><td class="text-indigo-600 font-bold">DINGO</td><td class="italic font-medium text-slate-500">〈수고했어 오늘도〉 일기 편<br>촬영 후 하루를 정리하는 브이로그 감성 영상</td><td class="font-bold">대중적 친밀감</td></tr>
+                <tr><td class="font-black py-8">전문 인터뷰</td><td class="text-indigo-600 font-bold">W Korea</td><td class="italic font-medium text-slate-500">〈The Global Actor〉<br>올-잉글리시 지성미 강조</td><td class="font-bold">지적 이미지</td></tr>
+                <tr><td class="font-black py-8">취미/일상</td><td class="text-indigo-600 font-bold">개인 유튜브 (신설)</td><td class="italic font-medium text-slate-500">〈노상현의 LOG〉<br>개인 브이로그</td><td class="font-bold">라이프</td></tr>
+              </tbody>
+            </table>
+          </div>`; }
+      },
+      {
+        id: 11, title: "국가별 팬미팅 차별화 전략", subtitle: "Global Targeting: 지역별 타겟 최적화 및 현지 마케팅", kicker: "Phase 11",
+        render() { return `
+          <div class="grid grid-cols-3 gap-8 animate-in items-stretch">
+            <div class="p-12 border rounded-[56px] bg-slate-50 flex flex-col justify-between border-slate-100 hover:bg-white hover:shadow-xl transition-all">
+              <div>
+                <h4 class="font-black text-4xl mb-6 italic underline decoration-black underline-offset-[12px]">🇰🇷 한국</h4>
+                <p class="text-xs text-indigo-600 font-black mb-10 tracking-widest uppercase">Start Point | 종영 감사</p>
+                <ul class="text-[15px] space-y-6 text-slate-500 font-medium">
+                  <li>• MOU 채널 현장 독점 생중계</li>
+                  <li>• 로비 내 실물 아웃도어 기어 전시</li>
+                  <li>• ‘실물 체감’ 중심 숏폼 집중 확산</li>
+                </ul>
+              </div>
+            </div>
+            <div class="p-12 border rounded-[56px] bg-slate-50 flex flex-col justify-between border-slate-100 hover:bg-white hover:shadow-xl transition-all">
+              <div>
+                <h4 class="font-black text-4xl mb-6 italic underline decoration-indigo-500 underline-offset-[12px]">🇯🇵 일본</h4>
+                <p class="text-xs text-rose-500 font-black mb-10 tracking-widest uppercase">High-end Dandy</p>
+                <ul class="text-[15px] space-y-6 text-slate-500 font-medium">
+                  <li>• 일본 현지 고프코어 트렌드 반영</li>
+                  <li>• 스포츠 브랜드 협업 한정 굿즈</li>
+                  <li>• 현지 셀럽 챌린지 및 틱톡 협업</li>
+                </ul>
+              </div>
+            </div>
+            <div class="p-12 border rounded-[56px] bg-slate-50 flex flex-col justify-between border-slate-100 hover:bg-white hover:shadow-xl transition-all">
+              <div>
+                <h4 class="font-black text-4xl mb-6 italic underline decoration-amber-500 underline-offset-[12px]">🌏 동남아</h4>
+                <p class="text-xs text-emerald-600 font-black mb-10 tracking-widest uppercase">Global OTT Icon</p>
+                <ul class="text-[15px] space-y-6 text-slate-500 font-medium">
+                  <li>• 현지 MZ 플랫폼 참여형 이벤트</li>
+                  <li>• 환경 단체 협업 플로깅 콘텐츠화</li>
+                  <li>• 글로벌 ‘입덕 영상’ 공모전 진행</li>
+                </ul>
+              </div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 12, title: "콘텐츠 제작 가이드라인 (SOP)", subtitle: "Production Guide: 톤앤매너 및 SWOT 기반 전략", kicker: "Phase 12",
+        render() { return `
+          <div class="space-y-10 animate-in">
+            <div class="grid grid-cols-2 gap-10">
+               <div class="accent-card flex flex-col justify-center gap-10 border-r-[12px] border-gold">
+                 <h4 class="text-gold font-black text-xs uppercase tracking-widest">Keywords & Tone</h4>
+                 <div class="space-y-6">
+                   <p class="text-3xl font-light leading-relaxed italic">“차분하고 고급스러운 화면 위에 <br><b class="text-white underline decoration-gold">말투는 따뜻하게</b>”</p>
+                   <div class="flex gap-3"><span class="px-4 py-2 bg-white/10 rounded-full text-[11px] font-bold">Sophisticated</span><span class="px-4 py-2 bg-white/10 rounded-full text-[11px] font-bold">Authentic</span></div>
+                 </div>
+               </div>
+               <div class="p-12 border rounded-[48px] bg-white space-y-10 shadow-sm">
+                 <h4 class="text-xs font-black underline uppercase text-slate-400 tracking-widest">SWOT Strategy</h4>
+                 <div class="space-y-8">
+                   <p class="text-[15px] font-medium leading-relaxed italic"><b class="text-indigo-600 block mb-3 font-black underline">✅ Strengths:</b> 지적 자산(영어/전공) 서사화. 181cm 워너비 비율 중심 전신 숏폼. 프로페셔널한 현장 비하인드.</p>
+                   <p class="text-[15px] font-medium leading-relaxed italic"><b class="text-rose-600 block mb-3 font-black underline">⚠️ Weaknesses:</b> 이미지 모호함 타파용 B-Cut 믹스. 차별화 포인트(글로벌 소통) 반복 노출. 일관된 무드 유지.</p>
+                 </div>
+               </div>
+            </div>
+            <div class="p-4 border rounded-[36px] bg-white shadow-sm overflow-hidden">
+              <table class="w-full">
+                <thead><tr class="text-slate-400 text-xs font-black uppercase tracking-widest"><th class="py-4">Channel</th><th class="py-4">Guide</th><th class="py-4">Goal</th></tr></thead>
+                <tbody class="text-[14px]">
+                  <tr><td class="font-black py-6">Instagram</td><td class="italic text-slate-500 font-medium">화보 무드+아웃도어 균형. 자연스러운 OOTD 연출.</td><td class="font-bold text-indigo-600">Premium 감성</td></tr>
+                  <tr><td class="font-black py-6">Short-form</td><td class="italic text-slate-500 font-medium">카리스마 vs 다정함 반전. 운동 모먼트 짧고 임팩트 있게.</td><td class="font-bold text-indigo-600">MZ 타겟팅</td></tr>
+                  <tr><td class="font-black py-6">YouTube</td><td class="italic text-slate-500 font-medium">MOU 독점 다큐/인터뷰. 투어 비하인드 서사 축적.</td><td class="font-bold text-indigo-600">팬덤 결집</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 13, title: "팬미팅 투어 브랜딩 굿즈 전략", subtitle: "Merchandise: 수익성과 브랜드 가치 동시 강화", kicker: "Phase 13",
+        render() { return `
+          <div class="grid grid-cols-3 gap-8 animate-in">
+             <div class="p-10 border rounded-[48px] bg-slate-50 flex flex-col gap-10 hover:shadow-lg transition-all">
+               <h4 class="font-black text-base italic text-indigo-600 underline underline-offset-8">High-end × Outdoor</h4>
+               <ul class="text-[15px] space-y-6 text-slate-600 font-medium">
+                 <li>• <b>프리미엄 텀블러:</b> 견고한 미니멀 디자인</li>
+                 <li>• <b>스포츠 타월:</b> 기능성 소재 + 로고 중심</li>
+                 <li>• <b>카라비너 키링:</b> 세련된 메탈 질감 강조</li>
+               </ul>
+             </div>
+             <div class="p-10 border rounded-[48px] bg-slate-50 flex flex-col gap-10 hover:shadow-lg transition-all">
+               <h4 class="font-black text-base italic text-indigo-600 underline underline-offset-8">Global × Intellectual</h4>
+               <ul class="text-[15px] space-y-6 text-slate-600 font-medium">
+                 <li>• <b>포토북 & 엽서:</b> 독점 컷 위주 고사양 인쇄</li>
+                 <li>• <b>패브릭 포스터:</b> 투어 로드맵 + 실루엣</li>
+                 <li>• <b>각인 문구 세트:</b> 영어 메시지 각인 볼펜</li>
+               </ul>
+             </div>
+             <div class="p-10 border rounded-[48px] bg-slate-50 flex flex-col justify-between hover:shadow-lg transition-all">
+               <div>
+                 <h4 class="font-black text-base italic text-indigo-600 underline underline-offset-8 mb-8">Country Edition</h4>
+                 <div class="space-y-6 text-[15px] font-bold">
+                    <div class="flex justify-between"><span>🇰🇷 한국</span><span class="text-slate-400">피크닉 매트</span></div>
+                    <div class="flex justify-between"><span>🇯🇵 일본</span><span class="text-slate-400">에코백/파우치</span></div>
+                    <div class="flex justify-between"><span>🌏 동남아</span><span class="text-slate-400">핸디 팬/쿨링 패치</span></div>
+                 </div>
+               </div>
+               <p class="text-[11px] text-gray-400 font-black text-center mt-10 italic">#Eco-friendly #RandomCard</p>
+             </div>
+          </div>`; }
+      },
+      {
+        id: 14, title: "차기작 단계별 브랜딩 전략", subtitle: "Build-up → Keep-going → Peak-time 작품 주기 관리", kicker: "Phase 14",
+        render() { return `
+          <div class="space-y-10 animate-in">
+            <div class="grid grid-cols-3 gap-6">
+              <div class="p-8 border rounded-[32px] bg-white shadow-sm border-slate-100">
+                <h4 class="text-xs font-black mb-4 uppercase text-indigo-600">Step 1. 촬영 준비</h4>
+                <p class="text-[14px] text-slate-500 font-medium italic">브랜드 앰배서더 연계 노출 및 MOU 채널 독점 인터뷰(전문성 강화)</p>
+              </div>
+              <div class="p-8 border rounded-[32px] bg-white shadow-sm border-slate-100">
+                <h4 class="text-xs font-black mb-4 uppercase text-indigo-600">Step 2. 촬영 진행</h4>
+                <p class="text-[14px] text-slate-500 font-medium italic">현장 비하인드 숏폼, 커피차 바이럴, 시즌 캠페인 릴리즈(공백 최소화)</p>
+              </div>
+              <div class="p-8 border rounded-[32px] bg-white shadow-sm border-slate-100">
+                <h4 class="text-xs font-black mb-4 uppercase text-indigo-600">Step 3. 방영/개봉</h4>
+                <p class="text-[14px] text-slate-500 font-medium italic">글로벌 영어 인터뷰 재확산 및 캐릭터 참여형 챌린지 집중</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-10">
+              <div class="p-12 border rounded-[56px] bg-slate-50 border-indigo-100 shadow-sm">
+                <h4 class="font-black text-xl mb-6 text-indigo-700 italic uppercase">장르물 〈골드디거〉</h4>
+                <p class="text-xs font-bold mb-6 italic text-slate-400">#Professional #Luxury</p>
+                <p class="text-[15px] text-slate-600 leading-relaxed font-medium italic">수트 핏/고급 스타일링 강조 콘텐츠 확산. 하이엔드 브랜드 주목 유도에 집중.</p>
+              </div>
+              <div class="p-12 border rounded-[56px] bg-rose-50 border-rose-100 shadow-sm">
+                <h4 class="font-black text-xl mb-6 text-rose-700 italic uppercase">로맨스 〈벌짓〉</h4>
+                <p class="text-xs font-bold mb-6 italic text-slate-400">#Warm #Active</p>
+                <p class="text-[15px] text-slate-600 leading-relaxed font-medium italic">일상 케미 중심 릴스/쇼츠 활용. 활동적인 남친 이미지 구축 및 스포츠웨어 노출.</p>
+              </div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 15, title: "SNS 셀프 콘텐츠 가이드 (미니멀)", subtitle: "Self Content: 비주얼과 분위기로 압도하는 무드 관리", kicker: "Phase 15",
+        render() { return `
+          <div class="grid grid-cols-2 gap-12 animate-in">
+             <div class="space-y-10 flex flex-col justify-center">
+               <div class="p-10 bg-black text-white rounded-[40px] shadow-2xl">
+                 <h4 class="text-gold font-black text-xs mb-6 uppercase tracking-widest">The Silent Luxury</h4>
+                 <p class="text-lg font-light italic mb-6">"유럽 패션위크: 설명 대신 장면과 소리"</p>
+                 <ul class="text-[13px] text-gray-400 space-y-4 font-medium italic">
+                   <li>• 릴스: 자켓을 걸치는 찰나의 음악 컷 편집</li>
+                   <li>• 스토리: 얼굴보다 본인 시선에서 본 쇼장 풍경</li>
+                   <li>• 피드: 정면 대신 걷거나 자연스러운 순간의 전신</li>
+                 </ul>
+               </div>
+               <div class="p-10 bg-slate-900 text-white rounded-[40px] shadow-2xl">
+                 <h4 class="text-gold font-black text-xs mb-6 uppercase tracking-widest">The Natural Athlete</h4>
+                 <p class="text-lg font-light italic mb-6">"스포츠 행사: 보여주기 대신 루틴처럼"</p>
+                 <ul class="text-[13px] text-gray-400 space-y-4 font-medium italic">
+                   <li>• 릴스: 무음악/현장음 중심의 리얼 러닝 사운드</li>
+                   <li>• 스토리: 전후 마시는 음료, 워치 운동 기록</li>
+                   <li>• 피드: 정제된 셀피 대신 운동 직후 담백한 모습</li>
+                 </ul>
+               </div>
+             </div>
+             <div class="v-card p-12 border rounded-[64px] bg-white space-y-12 shadow-sm flex flex-col justify-center">
+               <h4 class="font-black text-xs uppercase text-slate-400 tracking-[0.3em] underline decoration-slate-900 underline-offset-8 decoration-4">Advanced Concept</h4>
+               <div class="space-y-10">
+                 <div><h5 class="font-black text-sm text-indigo-600 mb-3 italic">🖼️ The Curator</h5><p class="text-[15px] text-slate-500 font-medium italic">배우의 시선이 머문 갤러리 작품, 건축물 질감 공유 (무언의 대화)</p></div>
+                 <div><h5 class="font-black text-sm text-indigo-600 mb-3 italic">🎞️ The Monologue</h5><p class="text-[15px] text-slate-500 font-medium italic">빛·그림자·공간 대비에 집중한 흑백 사진 아카이브</p></div>
+                 <div><h5 class="font-black text-sm text-indigo-600 mb-3 italic">🛠️ The Gear</h5><p class="text-[15px] text-slate-500 font-medium italic">신발 끈, 백팩 스트랩 조절 등 기능적 동작 클로즈업 (리얼리티)</p></div>
+               </div>
+               <p class="text-[11px] font-black text-slate-900 uppercase tracking-[0.5em] text-center mt-12 opacity-30">Text Minimized · Visual Accumulation</p>
+             </div>
+          </div>`; }
+      },
+      {
+        id: 16, title: "하이엔드 브랜딩 아이디어 패키지", subtitle: "Premium Ideas: 브랜드 및 매거진 제안용 고감도 포맷", kicker: "Phase 16",
+        render() { return `
+          <div class="grid grid-cols-2 gap-10 animate-in">
+            <div class="space-y-6 flex flex-col justify-center">
+              <div class="p-8 border rounded-[36px] bg-white hover:border-indigo-600 transition-all shadow-sm group">
+                <h4 class="font-black italic text-lg group-hover:text-indigo-600 mb-3">1) “Stillness” · 정지된 순간의 힘</h4>
+                <p class="text-[14px] text-slate-500 font-medium italic">호텔 창가 옆모습, 라운지 뒷모습 등 정지된 컷으로 자신감 각인.</p>
+              </div>
+              <div class="p-8 border rounded-[36px] bg-white hover:border-indigo-600 transition-all shadow-sm group">
+                <h4 class="font-black italic text-lg group-hover:text-indigo-600 mb-3">2) “The Detail” · 배우의 선택</h4>
+                <p class="text-[14px] text-slate-500 font-medium italic">시계 버클, 코트 안감, 테이블 위 안경 등 취향의 디테일 큐레이션.</p>
+              </div>
+              <div class="p-8 border rounded-[36px] bg-white hover:border-indigo-600 transition-all shadow-sm group">
+                <h4 class="font-black italic text-lg group-hover:text-indigo-600 mb-3">3) “No Face, Full Presence”</h4>
+                <p class="text-[14px] text-slate-500 font-medium italic">뒤돌아 선 전신, 실루엣 중심 노출로 클래식한 이미지 구축.</p>
+              </div>
+            </div>
+            <div class="p-12 bg-slate-900 rounded-[64px] text-white flex flex-col justify-center gap-12 shadow-2xl">
+               <div>
+                 <h4 class="text-gold font-black italic text-2xl mb-8">Channel Strategy</h4>
+                 <ul class="text-[16px] space-y-6 text-gray-400 font-medium italic">
+                   <li>• <b>체험/다큐형 채널:</b> 딩고 큐레이터, 왓츠인마이백</li>
+                   <li>• <b>행동형 예능 중심:</b> 나혼산 루틴 노출, 유퀴즈 커리어</li>
+                 </ul>
+               </div>
+               <div class="img-slot h-56 border-none rounded-[40px] shadow-2xl"><img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1600"><div class="absolute bottom-6 right-6 bg-white/10 backdrop-blur px-6 py-2 rounded-full text-[10px] uppercase font-black">Stillness & Detail</div></div>
+            </div>
+          </div>`; }
+      },
+      {
+        id: 17, title: "광고 영역 확장 로드맵 & 브랜드 맵", subtitle: "Ad Expansion: 설득 가능한 레퍼런스 축적의 설계도", kicker: "Phase 17",
+        render() { return `
+          <div class="space-y-12 animate-in">
+            <div class="accent-card p-12 flex flex-col gap-12 shadow-2xl">
+               <div class="flex justify-between items-center"><h4 class="text-gold font-black italic text-xl">Ad Expansion Roadmap</h4><p class="text-[11px] font-black text-gray-400 italic">"레퍼런스를 만들어 제안한다"</p></div>
+               <div class="flex gap-6 text-[11px] text-center font-black">
+                 <div class="flex-1 p-6 bg-white/5 rounded-[28px] border border-white/5">Step 1. 중소/중견 매칭</div>
+                 <div class="flex-1 p-6 bg-white/5 rounded-[28px] border border-white/5">Step 2. 협찬·간접 노출</div>
+                 <div class="flex-1 p-6 bg-white/10 rounded-[28px] border border-gold/30">Step 3. 프리미엄 제안</div>
+                 <div class="flex-1 p-6 bg-gold text-slate-900 rounded-[28px] shadow-xl">Final. 글로벌 하이엔드</div>
+               </div>
+               <div class="grid grid-cols-2 gap-10 text-[14px] text-gray-300 font-medium italic">
+                 <p>• 왜 하이엔드로 연결되는가: 상업 광고 실무 검증 및 브랜드 친화적 이미지</p>
+                 <p>• 내부 시도의 의미: 단기 수익보다 장기 이미지 보호 및 배우 소모 최소화</p>
+               </div>
+            </div>
+            <div class="grid grid-cols-3 gap-8">
+              <div class="v-card border p-10 rounded-[48px] border-t-8 border-t-indigo-600 shadow-sm">
+                <h4 class="font-black text-xs mb-4 text-indigo-600">Stage 1. ENTRY</h4>
+                <p class="text-[14px] text-slate-500 font-medium italic mb-6">첫 레퍼런스 확보 단계. 브랜드를 어떻게 소화하는지 증명.</p>
+                <div class="text-[10px] text-slate-400 italic">#신생아웃도어 #스포츠웨어</div>
+              </div>
+              <div class="v-card border p-10 rounded-[48px] border-t-8 border-t-rose-500 shadow-sm">
+                <h4 class="font-black text-xs mb-4 text-rose-500">Stage 2. GROWTH</h4>
+                <p class="text-[14px] text-slate-500 font-medium italic mb-6">광고 이력 확보 및 정합성 증명 단계. 프리미엄 중견 타겟.</p>
+                <div class="text-[10px] text-slate-400 italic">#프리미엄아웃도어 #워치</div>
+              </div>
+              <div class="v-card border p-10 rounded-[48px] border-t-8 border-t-gold bg-gold/5 shadow-sm">
+                <h4 class="font-black text-xs mb-4 text-gold uppercase">Stage 3. HIGH-END</h4>
+                <p class="text-[14px] text-slate-900 font-bold italic mb-6">브랜드 자산으로 포지셔닝. 글로벌 캠페인 모델 제안.</p>
+                <div class="text-[10px] text-slate-400 italic">#럭셔리패션 #글로벌앰배서더</div>
+              </div>
+            </div>
+          </div>`; }
+      }
+    ];
+
+    let current = 0;
+    const navList = document.getElementById('nav-list');
+    const stage = document.getElementById('stage-content');
+    const index = document.getElementById('slide-index');
+
+    function render() {
+      const slide = slides[current];
+      stage.innerHTML = `
+        <div class="mb-14">
+          <p class="text-[11px] font-black text-indigo-600 uppercase tracking-[0.4em] mb-4 border-l-4 border-indigo-600 pl-4">${slide.kicker}</p>
+          <h2 class="text-5xl font-black tracking-tighter mb-4 text-slate-900">${slide.title}</h2>
+          <p class="text-xl text-gray-400 font-medium italic">${slide.subtitle}</p>
         </div>
-        </div>
+        ${slide.render()}
+      `;
+      index.textContent = `PHASE ${String(current + 1).padStart(2, '0')} / ${slides.length}`;
+      document.querySelectorAll('.nav-item').forEach((el, i) => {
+        el.classList.toggle('active', i === current);
+      });
+      stage.scrollTop = 0;
+    }
 
-    </div>
+    navList.innerHTML = slides.map((s, i) => `
+      <button onclick="current=${i};render();" class="nav-item group w-full text-left p-5 rounded-[24px] transition-all flex items-center gap-5 text-gray-400 hover:bg-white hover:shadow-sm">
+        <span class="text-[10px] font-black opacity-30">${String(i+1).padStart(2,'0')}</span>
+        <span class="text-[12px] font-bold tracking-tighter truncate">${s.title}</span>
+      </button>
+    `).join('');
 
-    <!-- Optional Image Slot -->
-    <div class="mt-6 media">
-        <!-- <img src="YOUR_IMAGE_URL_OR_PATH" alt="Channel strategy mood reference" /> -->
-        <div class="media-placeholder">
-        <i class="fa-regular fa-image"></i>
-        이미지 슬롯: “토크 최소 / 무드 중심” 채널 레퍼런스 컷 (2~3장 콜라주)
-        </div>
-        <div class="caption">추천: ‘Essentials 테이블 샷’ + ‘러닝 루틴 뒷모습’ + ‘공항/라운지 정지 컷’</div>
-    </div>
+    document.getElementById('next-btn').onclick = () => { if(current < slides.length -1) current++; render(); };
+    document.getElementById('prev-btn').onclick = () => { if(current > 0) current--; render(); };
+    document.addEventListener('keydown', (e) => { 
+      if(e.key === 'ArrowRight') document.getElementById('next-btn').click(); 
+      if(e.key === 'ArrowLeft') document.getElementById('prev-btn').click(); 
+    });
 
-
-  </section>
-
-
-
-
-
-
-    <footer class="text-center text-gray-400 text-xs py-6">
-      STEVE NOH GLOBAL BRANDING STRATEGY | CONFIDENTIAL
-    </footer>
-
-  </div>
+    render();
+  </script>
 </body>
 </html>
